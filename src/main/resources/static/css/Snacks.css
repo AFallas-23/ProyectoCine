@@ -1,0 +1,104 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 15 mar. 2023, 17:18:11
+    Author     : maripazfonseca
+*/
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   font-family: 'Source Sans Pro', sans-serif;
+}
+
+html {
+    height: 100%;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana;
+    background: linear-gradient(#ff6600, #212123);
+    background-image: url("./../Images/templates/snack1-2.jpg");
+    background-image:url("./../Images/templates/snack2-2.jpg");
+    background-image: url("./../Images/templates/snack3-2.jpg");
+    background-image: url("./../Images/templates/snack4-2.jpg");
+    background-repeat: repeat-x;
+}
+
+header {
+    background-color: #ff6600;
+    padding: 10px;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    font-size: 36px;
+    color: #fff;
+}
+
+nav {
+    background-color: #6633ff;
+    padding: 10px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color:#212123;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+section {
+    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+article {
+    background-color:#ccc;
+    box-shadow: 0px 0px 10px #ccc;
+    margin: 20px;
+    padding: 10px;
+    width: 300px;
+    text-align: center;
+}
+
+article h2 {
+    font-size: 24px;
+    margin-top: 0;
+}
+
+article img {
+    max-width: 100%;
+    height: auto;
+}
+
+button {
+    background-color: #6633ff;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ff6600;
+}

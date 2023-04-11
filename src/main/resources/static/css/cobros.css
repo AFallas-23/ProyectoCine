@@ -1,0 +1,75 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 29 mar. 2023, 22:00:02
+    Author     : maripazfonseca
+*/
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+body {
+	font-family: "Poppins", sans-serif;
+	background-color: #6633ff;
+	margin: 0;
+	padding: 0;
+}
+
+
+header {
+    background-color: #ff6600;
+    color: #ff6600;
+	padding: 20px;
+	display: flex;
+	align-items: center;
+        background-image: ("./../Images/templates/cine_logo.png");
+        background-repeat: repeat-x;
+}
+
+header img {
+	height: 50px;
+	margin-right: 10px;
+}
+
+main {
+	padding: 20px;
+}
+
+.seccion-boletos table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-bottom: 20px;
+}
+
+.seccion-boletos th,
+.seccion-boletos td {
+	padding: 10px;
+	text-align: left;
+	border: 1px solid #ddd;
+}
+
+.seccion-snacks ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.seccion-snacks li {
+	margin-bottom: 5px;
+}
+
+.total {
+	text-align: right;
+	margin-top: 20px;
+}
+
+.total h3 {
+	font-size: 24px;
+	color: #fff;
+}
+
+footer {
+	background-color: #333;
+	color: #fff;
+	padding: 10px;
+	text-align: center;
+}
