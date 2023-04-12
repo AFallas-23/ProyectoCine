@@ -10,8 +10,22 @@
         <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,700'>
         <link rel="stylesheet" href="css/PInicio.css">
     </head>
+    <div class="search-container">
+        <input type="text" placeholder="Buscar...">
+        <button><i class="fas fa-search"></i></button>
+    </div>
 
     <body>
+        <header>
+            <nav>
+                <ul>
+                    <button class="boton-inicio_pi">Inicio</button>
+                    <button class="boton-acercade_pi">Acerca de</button>
+                    <button class="boton-contacto_pi">Contacto</button>
+                </ul>
+            </nav>
+        </header>
+
         <div class="options">
             <div class="option active" style="--optionBackground:url(./src\main\resources\Images\Batman.jpg);">
                 <div class="shadow"></div>
@@ -22,7 +36,7 @@
                     <div class="info">
                         <div class="main">Batman</div>
                         <div class="sub">
-                           Esto es la ciudad 
+                            Esto es la ciudad 
                         </div>
                     </div>
                 </div>
@@ -76,6 +90,24 @@
                 </div>
             </div>
         </div>
+
+        <div class="cartelera">
+            <h2>Cartelera</h2>
+            <div class="peliculas">
+                <div class="pelicula">
+                    <img src="Colocar la direccion de imagenes">
+                    <h3>Nombre de la Película</h3>
+                    <p>Descripción de la película.</p>
+                </div>
+                <div class="pelicula">
+                    <img src="Colocar la direccion de imagenes">
+                    <h3>Nombre de la Película</h3>
+                    <p>Descripción de la película.</p>
+                </div>
+                <!-- Agregar más películas aquí -->
+            </div>
+        </div>
+
         <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
         <script src="./Script.js"></script>
 

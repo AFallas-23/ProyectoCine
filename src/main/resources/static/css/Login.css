@@ -7,6 +7,40 @@
   font-family: "Poppins", sans-serif;
 }
 
+.boton-inicio {
+  background-color: #212123; 
+  border: none; 
+  color: white; 
+  padding: 10px 20px;
+  text-align: center; 
+  text-decoration: none;
+  display: inline-block; 
+  font-size: 16px; 
+  border-radius: 5px; 
+}
+.boton-acercade {
+  background-color: #212123; 
+  border: none; 
+  color: white; 
+  padding: 10px 20px;
+  text-align: center; 
+  text-decoration: none;
+  display: inline-block; 
+  font-size: 16px; 
+  border-radius: 5px; 
+}
+.boton-contacto {
+  background-color: #212123; 
+  border: none; 
+  color: white; 
+  padding: 10px 20px;
+  text-align: center; 
+  text-decoration: none;
+  display: inline-block; 
+  font-size: 16px; 
+  border-radius: 5px; 
+}
+
 html {
   height: 100%;
 }
@@ -154,5 +188,24 @@ body {
   50%,
   100% {
     right: 100%;
+  }
+}
+.login a span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #8b80f9);
+  animation: animacaoBotao4 1s linear infinite;
+  animation-delay: 0.75s;
+}
+
+@keyframes animationBot4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,
+  100% {
+    bottom: 100%;
   }
 }

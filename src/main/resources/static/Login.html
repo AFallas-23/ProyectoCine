@@ -1,47 +1,53 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário del login</title>
-    <link rel="stylesheet" href="css/Login.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formulário del login</title>
+        <link rel="stylesheet" href="css/Login.css">
+    </head>
 
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Acerca de</a></li>
-                <li><a href="#">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <button class="boton-inicio">Inicio</button>
+                    <button class="boton-acercade">Acerca de</button>
+                    <button class="boton-contacto">Contacto</button>
+                </ul>
+            </nav>
+        </header>
 
-    <main>
-        <div class="login">
-            <h2>Administrativo</h2>
-            <form>
-                <div class="login-input">
-                    <label for="email">Email:</label>
-                    <input type="text" name="email" id="email" required>
-                </div>
-                <div class="login-input">
-                    <label for="senha">Contraseña:</label>
-                    <input type="password" name="Contraseña" id="contrasena" required>
-                </div>
-                <button type="submit">Acessar</button>
-            </form>
-        </div>
-    </main>
+        <main>
+            <div class="login">
+                <h2>Administrativo</h2>
+                <form>
+                    <div class="login-input">
+                        <label for="email">Email:</label>
+                        <input type="text" name="email" id="email" required>
+                    </div>
+                    <div class="login-input">
+                        <label for="contraseña">Contraseña:</label>
+                        <input type="password" name="Contraseña" id="contrasena" required>
+                    </div>
+                    <a>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        Acessar
+                    </a>
+                </form>
+            </div>
+        </main>
 
-    <footer>
-        <p>Todos los derechos reservados.</p>
-    </footer>
+        <footer>
+            <p>Todos los derechos reservados.</p>
+        </footer>
 
-    <script src="./script.js"></script>
-</body>
+        <script src="./script.js"></script>
+    </body>
 
 </html>

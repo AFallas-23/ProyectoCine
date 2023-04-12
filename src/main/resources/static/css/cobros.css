@@ -21,7 +21,7 @@ header {
 	padding: 20px;
 	display: flex;
 	align-items: center;
-        background-image: ("./../Images/templates/cine_logo.png");
+        background-image("./../Images/templates/cine_logo.png");
         background-repeat: repeat-x;
 }
 
