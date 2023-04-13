@@ -62,10 +62,17 @@ public class FacturaController {
         List<Asiento> listaAsientos = asientoService.getAllAsiento();
         
         //Validacion para no usar asientos que ya fueron comprados
+        int cont = 0;
         for (int i = 0; i < listaAsientos.size(); i++) {
-            if (listaAsientos.get(i).getEstado().equals("Ocupado")) {
+            
+            if (listaAsientos.get(i).getEstado().equals("Ocupado") & i==0) {
+                System.out.println(listaAsientos.get(i).getNum_asiento());
                 listaAsientos.remove(i);
-            }
+                i = i-1;   //Correccion porque cuando se quita un asiento el 2 pasa a ser el 1. Y si desde el primero hay ocupados da el error   
+            }else if (listaAsientos.get(i).getEstado().equals("Ocupado")) { //Si los ocupados no van en fila se debe seguir validando normalmente
+                System.out.println(listaAsientos.get(i).getNum_asiento());
+                listaAsientos.remove(i);
+            }        
         }
       
         List<Comida> listaComidas = comidaService.getAllComida();
