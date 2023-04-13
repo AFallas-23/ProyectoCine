@@ -1,8 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
+
 package com.proyecto.entity;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 
 
@@ -11,22 +15,24 @@ package com.proyecto.entity;
  * @author Fernando
  */
 
-//@Entity
-//@Table(name = "peliculas")
+@Entity
+@Table(name = "peliculas")
 public class Pelicula {
-  //  @Id
-   // @GeneratedValue(strategy = GenerationType.IDENTITY)
+   @Id
+   @GeneratedValue(strategy = GenerationType.IDENTITY)
     
     
-    private int id; /*Para un mejor manejo*/
+    private long id; /*Para un mejor manejo*/
+   
+   
     private String nombre;
     private String fecha_estreno;
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 

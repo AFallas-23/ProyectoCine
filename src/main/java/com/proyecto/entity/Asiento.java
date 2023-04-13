@@ -1,8 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
+
 package com.proyecto.entity;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 
 
@@ -10,16 +16,16 @@ package com.proyecto.entity;
  *
  * @author Fernando
  */
-//@Entity
-//@Table(name = "asientos")
+@Entity
+@Table(name = "asientos")
 public class Asiento {
-  //  @Id
-   // @GeneratedValue(strategy = GenerationType.IDENTITY)
+   @Id
+   @GeneratedValue(strategy = GenerationType.IDENTITY)
     
     private String num_asiento; /*A1, A2....*/
     
-   // @ManyToOne
-   // @JoinColumn(name="num_sala")
+   @ManyToOne
+   @JoinColumn(name="num_sala")
     private Sala num_sala;    
 
     public String getNum_asiento() {

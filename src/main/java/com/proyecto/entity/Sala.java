@@ -1,30 +1,36 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
+
 package com.proyecto.entity;
-/*No se han instalado las dependencias, por eso da errores*/
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 
 /**
  *
  * @author Fernando
  */
-//@Entity
-//@Table(name = "salas")
+@Entity
+@Table(name = "salas")
 public class Sala {
-  //  @Id
-   // @GeneratedValue(strategy = GenerationType.IDENTITY)
+   @Id
+   @GeneratedValue(strategy = GenerationType.IDENTITY)
     
-    private int num_sala;
+    private long num_sala;
+   
+   
     private String max_personas;
     private String tipo_sala; /*VIP, Comun, 3D, VIP 3D*/
     private String costo_entrada;
 
-    public int getNum_sala() {
+    public long getNum_sala() {
         return num_sala;
     }
 
-    public void setNum_sala(int num_sala) {
+    public void setNum_sala(long num_sala) {
         this.num_sala = num_sala;
     }
 
