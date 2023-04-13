@@ -14,7 +14,7 @@ body {
 	padding: 0;
 }
 
-
+/*
 header {
     background-color: #ff6600;
     color: #ff6600;
@@ -23,7 +23,7 @@ header {
 	align-items: center;
         background-image("./../Images/templates/cine_logo.png");
         background-repeat: repeat-x;
-}
+}*/
 
 header img {
 	height: 50px;

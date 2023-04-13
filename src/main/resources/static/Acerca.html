@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html lang="es">
+    <head>
+        <title>Acerca de nosotros</title>
+        <link rel="stylesheet" type="text/css" href="Infopeli.css">
+        <link rel="stylesheet" href="css/InfoPeli.css"> 
+    </head>
+    <body style="background-color:black;">
+
+        <!-- Navbar  -->
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3">
+            <div class="container">
+                <a class="navbar-brand" href="#">Cine</a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                    >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <div class="mx-auto"></div>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="PInicio.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="Snacks.html">Snacks</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="Acerca.html">Acerca de</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="Login.html">Iniciar Sesion</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">Admin</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="contenido">
+            <div class="content-container">
+                <div class="contenido"
+                     style="background: linear-gradient(to bottom, rgba(0,0,0,0, #151515) url('../Images/cine.jpg')"
+                     > 
+                    <h1>Quienes somos?:</h1>
+                    <p class="sinopsis">Somos un grupo de estudiantes de la universidad Fidelitas que realizaron esta pagina para un
+                    proyecto cuatrimestral, todo lo que se encuentre aca ha sido realizado por nosotros tomando de referencia
+                    lo que el profesor nos ha brindado a lo largo de las semanas.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <footer>
+            <p>2023 Cine Estudiantes</p>
+        </footer>
+
+        <script src="NavBar.js"></script>
+        <script type="text/javascript">
+            var nav = document.querySelector('nav');
+
+            window.addEventListener('scroll', function () {
+                if (window.pageYOffset > 100) {
+                    nav.classList.add('bg-dark', 'shadow');
+                } else {
+                    nav.classList.remove('bg-dark', 'shadow');
+                }
+            });
+        </script>
+
+    </body>
+</html>
