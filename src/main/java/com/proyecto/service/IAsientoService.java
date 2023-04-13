@@ -11,4 +11,6 @@ import java.util.List;
 public interface IAsientoService {
     public List<Asiento> getAllAsiento();
     public Asiento getAsientoById (String num_asiento);
+    public void saveAsiento (Asiento asiento);
+    public void delete (String num_asiento);
 }

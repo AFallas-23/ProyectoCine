@@ -22,7 +22,6 @@
                     <th scope="col">Sala</th>
                     <th scope="col">Asiento</th>
                     <th scope="col">Comida</th>
-                    <th scope="col">Editar</th>
                     <th scope="col">Eliminar</th>
                 </tr>
             </thead>
@@ -34,12 +33,10 @@
                     <td th:text="${user.getFecha}"></td>
                     <td th:text="${user.getCliente.getNombre}"></td>
                     <td th:text="${user.getPelicula.getNombre}"></td>
-                    <td th:text="${user.getSala.getNum_sala}"></td>
+                    <td th:text="${user.getAsiento.getSala.getNum_sala}"></td>
                     <td th:text="${user.getAsiento.getNum_asiento}"></td>
                     <td th:text="${user.getComida.getNombre}"></td>
-                    <td>                        
-                        <a th:href="@{/editFactura/{num_factura}(num_factura=${user.getNum_factura})}">Edit</a>                    
-                    </td>
+       
                     <td>                        
                         <a th:href="@{/delete/{num_factura}(num_factura=${user.getNum_factura})}">Delete</a>                    
                     </td>

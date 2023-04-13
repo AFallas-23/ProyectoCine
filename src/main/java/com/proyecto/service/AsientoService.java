@@ -25,6 +25,17 @@ public class AsientoService implements IAsientoService{
     public Asiento getAsientoById(String num_asiento) {
         return asientoRepository.findById(num_asiento).orElse(null);
     }
+
+    @Override
+    public void delete(String num_asiento) {
+        asientoRepository.deleteById(num_asiento);
+        
+    }
+
+    @Override
+    public void saveAsiento(Asiento asiento) {
+        asientoRepository.save(asiento);
+    }
     
     
     

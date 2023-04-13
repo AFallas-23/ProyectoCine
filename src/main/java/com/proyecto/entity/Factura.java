@@ -34,10 +34,6 @@ public class Factura {
     private Pelicula pelicula;
     
     @ManyToOne
-    @JoinColumn(name="num_sala")
-    private Sala sala;
-    
-    @ManyToOne
     @JoinColumn(name="num_asiento")
     private Asiento asiento;
     
@@ -85,13 +81,6 @@ public class Factura {
         this.pelicula = pelicula;
     }
 
-    public Sala getSala() {
-        return sala;
-    }
-
-    public void setSala(Sala sala) {
-        this.sala = sala;
-    }
 
     public Asiento getAsiento() {
         return asiento;
