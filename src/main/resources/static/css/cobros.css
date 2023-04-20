@@ -1,29 +1,13 @@
-/*
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
-*/
-/* 
-    Created on : 29 mar. 2023, 22:00:02
-    Author     : maripazfonseca
-*/
+
 @import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
 body {
 	font-family: "Poppins", sans-serif;
-	background-color: #6633ff;
+	background: linear-gradient(#8b80f9, #212123);
 	margin: 0;
 	padding: 0;
 }
 
-/*
-header {
-    background-color: #ff6600;
-    color: #ff6600;
-	padding: 20px;
-	display: flex;
-	align-items: center;
-        background-image("./../Images/templates/cine_logo.png");
-        background-repeat: repeat-x;
-}*/
+
 
 header img {
 	height: 50px;

@@ -42,7 +42,7 @@ h1 {
 }
 
 nav {
-    background-color: #9999ff;
+    background: linear-gradient(#8b80f9, #212123);
     padding: 10px;
     text-align: center;
 }
@@ -72,7 +72,7 @@ section {
 }
 
 article {
-    background-color:#999999;
+    background: linear-gradient(#8b80f9, #212123);
     box-shadow: 0px 0px 10px #ccc;
     margin: 20px;
     padding: 10px;

@@ -1,116 +1,132 @@
 <!DOCTYPE html>
 
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Pagina de inicio</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css'>
+    <link rel='stylesheet' href='https://static.fontawesome.com/css/fontawesome-app.css'>
+    <link rel='stylesheet' href='https://pro.fontawesome.com/releases/v5.2.0/css/all.css'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,700'>
+    <link rel="stylesheet" href="css/PInicio.css">
+</head>
 
-    <head>
-        <meta charset="UTF-8">
-        <title>Pagina de inicio</title>
-        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css'>
-        <link rel='stylesheet' href='https://static.fontawesome.com/css/fontawesome-app.css'>
-        <link rel='stylesheet' href='https://pro.fontawesome.com/releases/v5.2.0/css/all.css'>
-        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,700'>
-        <link rel="stylesheet" href="css/PInicio.css">
-    </head>
-            <header>
-            <nav>
-                <ul>
-                    <button class="boton-inicio_pi">Inicio</button>
-                    <button class="boton-acercade_pi">Acerca de</button>
-                    <button class="boton-contacto_pi">Contacto</button>
-                </ul>
-            </nav>
-        </header>
-    <div class="search-container">
-        <input type="text" placeholder="Buscar...">
-        <button><i class="fas fa-search"></i></button>
+
+<body>
+    <header>
+    <nav>
+        <ul>
+            <button class="boton-inicio_pi">Inicio</button>
+            <button class="boton-acercade_pi">Acerca de</button>
+            <button class="boton-contacto_pi">Contacto</button>
+        </ul>
+    </nav>
+</header>
+<div class="search-container">
+    <input type="text" placeholder="Buscar...">
+    <button><i class="fas fa-search"></i></button>
+</div>
+    <div class="options">
+        <div class="option active" style="--optionBackground:url(./../Images.templates/Bat.jpg);">
+            <div class="shadow"></div>
+            <div class="label">
+                <div class="icon">
+                    <!--Agregar icono-->
+                </div>
+                <div class="info">
+                    <div class="main">Batman</div>
+                    <div class="sub">
+                        Esto es la ciudad 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="option" style="--optionBackground:url(./src\main\resources\Images\gato_con_botas.jpg);">
+            <div class="shadow"></div>
+            <div class="label">
+                <div class="icon">
+                    <!--Agregar icono-->
+                </div>
+                <div class="info">
+                    <div class="main">El gato con botas</div>
+                    <div class="sub"></div>
+                </div>
+            </div>
+        </div>
+        <div class="option" style="--optionBackground:url(./src\main\resources\Images\John.jpg);">
+            <div class="shadow"></div>
+            <div class="label">
+                <div class="icon">
+                    <!--Agregar icono-->
+                </div>
+                <div class="info">
+                    <div class="main">John</div>
+                    <div class="sub">Escrito</div>
+                </div>
+            </div>
+        </div>
+        <div class="option" style="--optionBackground:url(./src\main\resources\Images\IMG_5049.jpg);">
+            <div class="shadow"></div>
+            <div class="label">
+                <div class="icon">
+                    <!--Agregar icono-->
+                </div>
+                <div class="info">
+                    <div class="main">Una esposa de mentiras</div>
+                    <div class="sub">Escrito</div>
+                </div>
+            </div>
+        </div>
+        <div class="option" style="--optionBackground:url(./src\main\resources\Images\scale.jpg);">
+            <div class="shadow"></div>
+            <div class="label">
+                <div class="icon">
+                    <!--Agregar icono-->
+                </div>
+                <div class="info">
+                    <div class="main">Scream 6</div>
+                    <div class="sub">Escrito</div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <body>
-        <div class="options">
-               <div class="option active" style="--optionBackground:url(./../Images.templates/Bat.jpg);">
-                <div class="shadow"></div>
-                <div class="label">
-                    <div class="icon">
-                        <!--Agregar icono-->
-                    </div>
-                    <div class="info">
-                        <div class="main">Batman</div>
-                        <div class="sub">
-                            Esto es la ciudad 
-                        </div>
-                    </div>
-                </div>
+    <div class="cartelera">
+        <h2>Cartelera</h2>
+        <div class="peliculas">
+            <div class="pelicula">
+                <img src="../images./Bat.jpg">
+                <h3>Nombre de la Película</h3>
+                <p>Descripción de la película.</p>
             </div>
-            <div class="option" style="--optionBackground:url(./src\main\resources\Images\gato_con_botas.jpg);">
-                <div class="shadow"></div>
-                <div class="label">
-                    <div class="icon">
-                        <!--Agregar icono-->
-                    </div>
-                    <div class="info">
-                        <div class="main">El gato con botas</div>
-                        <div class="sub"></div>
-                    </div>
-                </div>
+            <div class="pelicula">
+                <img src="Colocar la direccion de imagenes">
+                <h3>Nombre de la Película</h3>
+                <p>Descripción de la película.</p>
             </div>
-            <div class="option" style="--optionBackground:url(./src\main\resources\Images\John.jpg);">
-                <div class="shadow"></div>
-                <div class="label">
-                    <div class="icon">
-                        <!--Agregar icono-->
-                    </div>
-                    <div class="info">
-                        <div class="main">John</div>
-                        <div class="sub">Escrito</div>
-                    </div>
-                </div>
-            </div>
-            <div class="option" style="--optionBackground:url(./src\main\resources\Images\IMG_5049.jpg);">
-                <div class="shadow"></div>
-                <div class="label">
-                    <div class="icon">
-                        <!--Agregar icono-->
-                    </div>
-                    <div class="info">
-                        <div class="main">Una esposa de mentiras</div>
-                        <div class="sub">Escrito</div>
-                    </div>
-                </div>
-            </div>
-            <div class="option" style="--optionBackground:url(./src\main\resources\Images\scale.jpg);">
-                <div class="shadow"></div>
-                <div class="label">
-                    <div class="icon">
-                        <!--Agregar icono-->
-                    </div>
-                    <div class="info">
-                        <div class="main">Scream 6</div>
-                        <div class="sub">Escrito</div>
-                    </div>
-                </div>
-            </div>
+            <!-- Agregar más películas aquí -->
         </div>
+    </div>
+    <footer>
+        <p>2023 Cine Estudiantes</p>
+    </footer>
 
-        <div class="cartelera">
-            <h2>Cartelera</h2>
-            <div class="peliculas">
-                <div class="pelicula">
-                  <img src="../images./Bat.jpg">
-                    <h3>Nombre de la Película</h3>
-                    <p>Descripción de la película.</p>
-                </div>
-                <div class="pelicula">
-                    <img src="Colocar la direccion de imagenes">
-                    <h3>Nombre de la Película</h3>
-                    <p>Descripción de la película.</p>
-                </div>
-                <!-- Agregar más películas aquí -->
-            </div>
-        </div>
+    <script src="NavBar.js"></script>
+    <script type="text/javascript">
+        var nav = document.querySelector('nav');
 
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
-        <script src="./Script.js"></script>
+        window.addEventListener('scroll', function () {
+            if (window.pageYOffset > 100) {
+                nav.classList.add('bg-dark', 'shadow');
+            } else {
+                nav.classList.remove('bg-dark', 'shadow');
+            }
+        });
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script src="./Script.js"></script>
 
-    </body>
-
+</body>
+</html>
 
 

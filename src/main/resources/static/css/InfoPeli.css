@@ -22,7 +22,7 @@ body {
 
 .contenido {
 	margin: 50px;
-        background-color: black;
+       background: linear-gradient(#8b80f9, #212123);
         min-height: calc(100vh - 50px);
         color: white;
 }
