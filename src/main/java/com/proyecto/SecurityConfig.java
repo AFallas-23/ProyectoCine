@@ -66,7 +66,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .formLogin() //Esto crea un login por defecto de spring
                 //Apartir de aca se le dice al programa cual va a ser el login que debe usar(el nuestro)
-                .loginPage("/login").permitAll().defaultSuccessUrl("/PInicio.html", true).and().logout() //Todas las personas pueden entrar y al logear lo lleva a persona
+                .loginPage("/login").permitAll().defaultSuccessUrl("/PInicio", true).and().logout() //Todas las personas pueden entrar y al logear lo lleva a persona
                 .logoutUrl("/logout")
                 .logoutSuccessUrl("/");
     }
