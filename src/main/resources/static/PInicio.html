@@ -1,132 +1,180 @@
 <!DOCTYPE html>
 
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Pagina de inicio</title>
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css'>
-    <link rel='stylesheet' href='https://static.fontawesome.com/css/fontawesome-app.css'>
-    <link rel='stylesheet' href='https://pro.fontawesome.com/releases/v5.2.0/css/all.css'>
-    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,700'>
-    <link rel="stylesheet" href="css/PInicio.css">
-</head>
+<html xmlns:th="http://www.thymeleaf.org"     
+      xmlns:sec="http://thymeleaft.org/extras/spring-security"
+    lang="es">
+    <head>
+        <title>Pagina de inicio</title>
+
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css'>
+        <link rel='stylesheet' href='https://static.fontawesome.com/css/fontawesome-app.css'>
+        <link rel='stylesheet' href='https://pro.fontawesome.com/releases/v5.2.0/css/all.css'>
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,700'>
+        <link rel="stylesheet" href="css/PInicio.css">
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" >
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>    
+    </head>
 
 
-<body>
-    <header>
-    <nav>
-        <ul>
-            <button class="boton-inicio_pi">Inicio</button>
-            <button class="boton-acercade_pi">Acerca de</button>
-            <button class="boton-contacto_pi">Contacto</button>
-        </ul>
-    </nav>
-</header>
-<div class="search-container">
-    <input type="text" placeholder="Buscar...">
-    <button><i class="fas fa-search"></i></button>
-</div>
-    <div class="options">
-        <div class="option active" style="--optionBackground:url(./../Images.templates/Bat.jpg);">
-            <div class="shadow"></div>
-            <div class="label">
-                <div class="icon">
-                    <!--Agregar icono-->
+    <body>
+        <!-- Navbar  -->
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3">
+            <div class="container">
+                <a class="navbar-brand" href="#">Cine</a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                    >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <div class="mx-auto"></div>
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="Snacks.html">Snacks</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="facturaC">Comprar</a>
+                        </li>
+                                    
+                        <li sec:authorize="hasRole('ROLE_USER')" class="nav-item">
+                            <a class="nav-link" href="#" th:href="@{~/facturaC}">Comprar</a>
+                        </li>
+                        <li sec:authorize="hasAnyRole('ROLE_ADMIN','ROLE_MANAGER')" class="nav-item"> 
+                            <a class="nav-link" href="#" th:href="@{~/factura}">Facturas</a>
+                        </li>
+                       
+                        
+                       
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="login">Iniciar Sesion</a>
+                        </li>
+                    </ul>
+                    
+                    <form class="form-inline my-2 my-lg-0" form-method="post" th:action="@{/logout}">
+                        <button sec:authorize="isAuthenticated()" class="btn btn-outline-danger my-2 my-sm-0 btn-sm" type="submit">Logout</button>
+                        <button sec:authorize="isAnonymous()" th:href="@{~/login}" class="btn btn-outline-info my-2 my-sm-0 btn-sm" type="submit">Login</button>
+                    </form>
+                    
+                    
                 </div>
-                <div class="info">
-                    <div class="main">Batman</div>
-                    <div class="sub">
-                        Esto es la ciudad 
+            </div>
+        </nav>
+
+
+
+
+        <div class="options">
+            <div class="option active" style="--optionBackground:url(./../Images.templates/Bat.jpg);">
+                <div class="shadow"></div>
+                <div class="label">
+                    <div class="icon">
+                        <!--Agregar icono-->
+                    </div>
+                    <div class="info">
+                        <div class="main">Batman</div>
+                        <div class="sub">
+                            Esto es la ciudad 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="option" style="--optionBackground:url(./src\main\resources\Images\gato_con_botas.jpg);">
+                <div class="shadow"></div>
+                <div class="label">
+                    <div class="icon">
+                        <!--Agregar icono-->
+                    </div>
+                    <div class="info">
+                        <div class="main">El gato con botas</div>
+                        <div class="sub"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="option" style="--optionBackground:url(./src\main\resources\Images\John.jpg);">
+                <div class="shadow"></div>
+                <div class="label">
+                    <div class="icon">
+                        <!--Agregar icono-->
+                    </div>
+                    <div class="info">
+                        <div class="main">John</div>
+                        <div class="sub">Escrito</div>
+                    </div>
+                </div>
+            </div>
+            <div class="option" style="--optionBackground:url(./src\main\resources\Images\IMG_5049.jpg);">
+                <div class="shadow"></div>
+                <div class="label">
+                    <div class="icon">
+                        <!--Agregar icono-->
+                    </div>
+                    <div class="info">
+                        <div class="main">Una esposa de mentiras</div>
+                        <div class="sub">Escrito</div>
+                    </div>
+                </div>
+            </div>
+            <div class="option" style="--optionBackground:url(./src\main\resources\Images\scale.jpg);">
+                <div class="shadow"></div>
+                <div class="label">
+                    <div class="icon">
+                        <!--Agregar icono-->
+                    </div>
+                    <div class="info">
+                        <div class="main">Scream 6</div>
+                        <div class="sub">Escrito</div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="option" style="--optionBackground:url(./src\main\resources\Images\gato_con_botas.jpg);">
-            <div class="shadow"></div>
-            <div class="label">
-                <div class="icon">
-                    <!--Agregar icono-->
-                </div>
-                <div class="info">
-                    <div class="main">El gato con botas</div>
-                    <div class="sub"></div>
-                </div>
-            </div>
-        </div>
-        <div class="option" style="--optionBackground:url(./src\main\resources\Images\John.jpg);">
-            <div class="shadow"></div>
-            <div class="label">
-                <div class="icon">
-                    <!--Agregar icono-->
-                </div>
-                <div class="info">
-                    <div class="main">John</div>
-                    <div class="sub">Escrito</div>
-                </div>
-            </div>
-        </div>
-        <div class="option" style="--optionBackground:url(./src\main\resources\Images\IMG_5049.jpg);">
-            <div class="shadow"></div>
-            <div class="label">
-                <div class="icon">
-                    <!--Agregar icono-->
-                </div>
-                <div class="info">
-                    <div class="main">Una esposa de mentiras</div>
-                    <div class="sub">Escrito</div>
-                </div>
-            </div>
-        </div>
-        <div class="option" style="--optionBackground:url(./src\main\resources\Images\scale.jpg);">
-            <div class="shadow"></div>
-            <div class="label">
-                <div class="icon">
-                    <!--Agregar icono-->
-                </div>
-                <div class="info">
-                    <div class="main">Scream 6</div>
-                    <div class="sub">Escrito</div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <div class="cartelera">
-        <h2>Cartelera</h2>
-        <div class="peliculas">
-            <div class="pelicula">
-                <img src="../images./Bat.jpg">
-                <h3>Nombre de la Película</h3>
-                <p>Descripción de la película.</p>
+        <div class="cartelera">
+            <h2>Cartelera</h2>
+            <div class="peliculas">
+                <div class="pelicula">
+                    <img src="../images./Bat.jpg">
+                    <h3>Nombre de la Película</h3>
+                    <p>Descripción de la película.</p>
+                </div>
+                <div class="pelicula">
+                    <img src="Colocar la direccion de imagenes">
+                    <h3>Nombre de la Película</h3>
+                    <p>Descripción de la película.</p>
+                </div>
+                <!-- Agregar más películas aquí -->
             </div>
-            <div class="pelicula">
-                <img src="Colocar la direccion de imagenes">
-                <h3>Nombre de la Película</h3>
-                <p>Descripción de la película.</p>
-            </div>
-            <!-- Agregar más películas aquí -->
         </div>
-    </div>
-    <footer>
-        <p>2023 Cine Estudiantes</p>
-    </footer>
+        <footer>
+            <p>2023 Cine Estudiantes</p>
+        </footer>
 
-    <script src="NavBar.js"></script>
-    <script type="text/javascript">
-        var nav = document.querySelector('nav');
+        <script src="NavBar.js"></script>
+        <script type="text/javascript">
+            var nav = document.querySelector('nav');
 
-        window.addEventListener('scroll', function () {
-            if (window.pageYOffset > 100) {
-                nav.classList.add('bg-dark', 'shadow');
-            } else {
-                nav.classList.remove('bg-dark', 'shadow');
-            }
-        });
-    </script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
-    <script src="./Script.js"></script>
+            window.addEventListener('scroll', function () {
+                if (window.pageYOffset > 100) {
+                    nav.classList.add('bg-dark', 'shadow');
+                } else {
+                    nav.classList.remove('bg-dark', 'shadow');
+                }
+            });
+        </script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+        <script src="./Script.js"></script>
 
-</body>
+    </body>
 </html>
 
 

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"     
+      xmlns:sec="http://thymeleaft.org/extras/spring-security">
+    <head>
+        <title>Iniciar Sesion</title>
+        <link rel="stylesheet"  th:href="@{/css/Login.css}">
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <!-- JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    </head>
+
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <button class="boton-inicio" role="link" onclick="window.location = 'Pinicio.html'">Inicio</button>
+                    <button class="boton-acercade">Acerca de</button>
+                    <button class="boton-contacto">Contacto</button>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <div class="login">
+                <h2>Administrativo</h2>
+                <form name="f" th:action="@{/login}" method="post"> 
+                    <fieldset>
+                        <!-- Thymeleaf + Spring Security error display -->
+                        <div th:if="${param.error}" class="alert alert-danger">
+                            Invalid username and password.
+                        </div>
+                        <div th:if="${param.logout}" class="alert alert-success">
+                            You have been logged out.
+                        </div>
+                        <!-- Login Controls -->
+                        <div class="form-group">
+                            <label for="txtUsername">Username</label>
+                            <!-- Los id son obligatorios asi -->
+                            <input type="text" class="form-control" id="username" name="username" 
+                                   placeholder="Username">
+                        </div>
+                        <div class="form-group">
+                            <label for="txtPassword">Password</label>
+                            <input type="password" class="form-control" id="password" name="password"
+                                   placeholder="Password">
+                        </div>
+                        <!-- Login Button -->
+                        <div class="form-actions" style="margin-top: 12px;">
+                            <button type="submit" class="btn btn-success">Iniciar sesion</button>
+                        </div>
+                    </fieldset>
+                </form>
+
+                <a class="mt-5" href="/usuarios/crear" role="button">Registrarse</a>
+
+            </div>
+        </main>
+
+        <script src="./script.js"></script>
+    </body>
+
+</html>

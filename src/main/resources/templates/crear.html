@@ -9,9 +9,9 @@
     </head>
     <!-- Hacerlo más bonito y mostrar una imagen con los asientos -->
     <body>
-        <img src="images/butacas.png" alt="Butacas"/> 
-        <img src="/templates/images/butacas.png" alt="Chania" width="500" height="200">
-        <img src="images/cielo.jpg" alt="Butacas"/> 
+
+        <img th:src="@{/static/images/butacas.png}" alt="Butacas"/>
+        
         <div class="container">
             <div class="card-header bg-black text-white"> </div>
             <div class="card-body"> 
@@ -86,8 +86,7 @@
 
                         
                         <button type="submit" class="btn btn-primary" value="Guardar">Comprar</button>
-                        
-                        <!-- Ocupamos borrar el asiento una vez que se compra -->
+
                         
                     </form>  
                     
