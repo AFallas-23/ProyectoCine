@@ -170,7 +170,7 @@ body.dark {
 }
 @media (prefers-color-scheme: dark) {
   body:not(.light) {
-    background: #212123;
+   background: linear-gradient(#8b80f9, #212123);
     color: white;
   }
 }
@@ -233,24 +233,19 @@ body .options .option {
   cursor: pointer;
   transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
 }
-body .options .option:nth-child(1) {
+body .options .option:nth-child(2) {
   --defaultBackground: #ed5565;
 }
-body .options .option:nth-child(2) {
+body .options .option:nth-child(3) {
   --defaultBackground: #fc6e51;
 }
-body .options .option:nth-child(3) {
+body .options .option:nth-child(4) {
   --defaultBackground: #ffce54;
 }
-body .options .option:nth-child(4) {
+body .options .option:nth-child(5) {
   --defaultBackground: #2ecc71;
 }
-body .options .option:nth-child(5) {
-  --defaultBackground: #5d9cec;
-}
-body .options .option:nth-child(6) {
-  --defaultBackground: #ac92ec;
-}
+
 body .options .option.active {
   flex-grow: 10000;
   transform: scale(1);
