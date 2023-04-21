@@ -38,44 +38,41 @@
 
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <div class="mx-auto"></div>
-                    <ul class="navbar-nav mr-auto">
+                    <ul class="navbar-nav">       
+
+                        <li sec:authorize="hasRole('ROLE_USER')" class="nav-item">
+                            <a class="nav-link text-white" href="#" th:href="@{~/facturaC}">Comprar</a>
+                        </li>
+                        <li sec:authorize="hasAnyRole('ROLE_ADMIN','ROLE_MANAGER')" class="nav-item"> 
+                            <a class="nav-link text-white" href="#" th:href="@{~/factura}">Facturas</a>
+                        </li>
+                        <li sec:authorize="hasAnyRole('ROLE_ADMIN','ROLE_MANAGER')" class="nav-item"> 
+                            <a class="nav-link text-white" href="#" th:href="@{~/cliente}">Cliente</a>
+                        </li>
+                        <!-- Para dar opcion de compra a administrador -->
+                        <li sec:authorize="hasAnyRole('ROLE_ADMIN','ROLE_MANAGER')" class="nav-item"> 
+                            <a class="nav-link text-white" href="#" th:href="@{~/facturaC}">Comprar</a>
+                        </li>
+                        
                         <li class="nav-item">
                             <a class="nav-link text-white" href="Snacks.html">Snacks</a>
                         </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="facturaC">Comprar</a>
+                        
+                        <li sec:authorize="isAuthenticated()" class="btn btn-outline-danger my-2 my-sm-0 btn-sm"> 
+                            <a class="nav-link text-white" href="#" th:href="@{~/logout}">Cerrar sesion</a>
                         </li>
-
-                        <li sec:authorize="hasRole('ROLE_USER')" class="nav-item">
-                            <a class="nav-link" href="#" th:href="@{~/facturaC}">Comprar</a>
-                        </li>
-                        <li sec:authorize="hasAnyRole('ROLE_ADMIN','ROLE_MANAGER')" class="nav-item"> 
-                            <a class="nav-link" href="#" th:href="@{~/factura}">Facturas</a>
-                        </li>
-
-
-
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="login">Iniciar Sesion</a>
+                        
+                        <li sec:authorize="isAnonymous()" class="btn btn-outline-info my-2 my-sm-0 btn-sm"> 
+                            <a class="nav-link text-white" href="#" th:href="@{~/login}">Iniciar sesion</a>
                         </li>
                     </ul>
-
-                    <form class="form-inline my-2 my-lg-0" form-method="post" th:action="@{/logout}">
-                        <button sec:authorize="isAuthenticated()" class="btn btn-outline-danger my-2 my-sm-0 btn-sm" type="submit">Logout</button>
-                        <button sec:authorize="isAnonymous()" th:href="@{~/login}" class="btn btn-outline-info my-2 my-sm-0 btn-sm" type="submit">Login</button>
-                    </form>
-
 
                 </div>
             </div>
         </nav>
 
-        <!-- Esta ruta funciona -->
-        <img th:src="@{/images/butacas.png}" alt="Butacas"/>
-
         <div class="options">
-            <div class="option active" style="--optionBackground:url( F:/Desarrollo de Aplicaciones Web y Patrones/Proyecto/ProyectoCine/src/main/resources/static/images/butacas.png);">
+            <div class="option active" style="--optionBackground:url( );">
                 <div class="shadow"></div>
                 <div class="label">
                     <div class="icon">

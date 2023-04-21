@@ -6,14 +6,12 @@ import com.proyecto.entity.Cliente;
 import com.proyecto.entity.Comida;
 import com.proyecto.entity.Factura;
 import com.proyecto.entity.Pelicula;
-import com.proyecto.entity.Sala;
 import com.proyecto.service.IAsientoService;
 import com.proyecto.service.IClienteService;
 import com.proyecto.service.IComidaService;
 import com.proyecto.service.IFacturaService;
 import com.proyecto.service.IPeliculaService;
 import com.proyecto.service.ISalaService;
-import java.util.Iterator;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -51,7 +49,7 @@ public class FacturaController {
     @GetMapping("/factura")
     public String index(Model model){
         List<Factura> listaFactura = facturaService.getAllFactura();
-        model.addAttribute("titulo", "Facturas");
+        model.addAttribute("titulo", "Historial de facturas");
         model.addAttribute("facturas", listaFactura);
         return "facturas";
     }
