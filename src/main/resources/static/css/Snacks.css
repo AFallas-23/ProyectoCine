@@ -1,11 +1,4 @@
-/*
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
-*/
-/* 
-    Created on : 15 mar. 2023, 17:18:11
-    Author     : maripazfonseca
-*/
+
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap");
 * {
     margin: 0;
@@ -22,10 +15,10 @@ body {
     padding: 0;
     font-family: Verdana;
     background: linear-gradient(#8b80f9, #212123);
-    background-image: url("./../Image/templates/snack1-2.jpg");
-    background-image:url("./../Images/templates/snack2-2.jpg");
-    background-image: url("./../Images/templates/snack3-2.jpg");
-    background-image: url("./../Images/templates/snack4-2.jpg");
+    background-image: url("../images/snack1-2.jpg");
+    background-image:url("../images/snack2-2.jpg");
+    background-image: url("../images/snack3-2.jpg");
+    background-image: url("../images/snack4-2.jpg");
     background-repeat: repeat-x;
 }
 
