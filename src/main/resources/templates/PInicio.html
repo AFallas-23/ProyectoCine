@@ -47,7 +47,7 @@
                             <a class="nav-link text-white" href="#" th:href="@{~/factura}">Facturas</a>
                         </li>
                         <li sec:authorize="hasAnyRole('ROLE_ADMIN','ROLE_MANAGER')" class="nav-item"> 
-                            <a class="nav-link text-white" href="#" th:href="@{~/cliente}">Cliente</a>
+                            <a class="nav-link text-white" href="#" th:href="@{~/cliente}">Clientes</a>
                         </li>
                         <!-- Para dar opcion de compra a administrador -->
                         <li sec:authorize="hasAnyRole('ROLE_ADMIN','ROLE_MANAGER')" class="nav-item"> 

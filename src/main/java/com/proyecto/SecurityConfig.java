@@ -58,7 +58,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http)  throws Exception{
         http.authorizeRequests()
-                .antMatchers("/factura", "/login")
+                .antMatchers("/factura","/cliente", "/login")
                 .hasRole("ADMIN")
                 .antMatchers("/facturaC", "/factura", "/", "/login")
                 .hasAnyRole("USER", "ADMIN") //Borrando acá tambien se pueden restringir accesos
