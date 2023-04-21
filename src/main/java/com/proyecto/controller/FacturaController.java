@@ -87,7 +87,7 @@ public class FacturaController {
         asiento.setEstado("Ocupado");
         asientoService.saveAsiento(asiento);
         
-        return "redirect:/factura";
+        return "redirect:/factura"; //Redirigir a una pantalla de mostrar la factura, no todas
     }
     
     @GetMapping("/delete/{num_factura}")
