@@ -53,15 +53,15 @@
                         <li sec:authorize="hasAnyRole('ROLE_ADMIN','ROLE_MANAGER')" class="nav-item"> 
                             <a class="nav-link text-white" href="#" th:href="@{~/facturaC}">Comprar</a>
                         </li>
-                        
+
                         <li class="nav-item">
                             <a class="nav-link text-white" href="Snacks.html">Snacks</a>
                         </li>
-                        
+
                         <li sec:authorize="isAuthenticated()" class="btn btn-outline-danger my-2 my-sm-0 btn-sm"> 
                             <a class="nav-link text-white" href="#" th:href="@{~/logout}">Cerrar sesion</a>
                         </li>
-                        
+
                         <li sec:authorize="isAnonymous()" class="btn btn-outline-info my-2 my-sm-0 btn-sm"> 
                             <a class="nav-link text-white" href="#" th:href="@{~/login}">Iniciar sesion</a>
                         </li>
@@ -72,7 +72,7 @@
         </nav>
 
         <div class="options">
-            <div class="option active" style="--optionBackground:url( );">
+            <div class="option" style="--optionBackground:url(./src\main\resources\Images\scale.jpg);">
                 <div class="shadow"></div>
                 <div class="label">
                     <div class="icon">
@@ -98,7 +98,7 @@
                     </div>
                 </div>
             </div>
-            <div class="option" style="--optionBackground:url(./src\main\resources\Images\John.jpg);">
+            <div class="option" style="--optionBackground:url(./src\main\resources\Images\scale.jpg);">
                 <div class="shadow"></div>
                 <div class="label">
                     <div class="icon">
@@ -110,7 +110,7 @@
                     </div>
                 </div>
             </div>
-            <div class="option" style="--optionBackground:url(./src\main\resources\Images\IMG_5049.jpg);">
+            <div class="option" style="--optionBackground:url(./src\main\resources\Images\scale.jpg);">
                 <div class="shadow"></div>
                 <div class="label">
                     <div class="icon">
@@ -134,23 +134,62 @@
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="cartelera">
-            <h2>Cartelera</h2>
-            <div class="peliculas">
-                <div class="pelicula">
-                    <img src="../images./Bat.jpg">
-                    <h3>Nombre de la Película</h3>
-                    <p>Descripción de la película.</p>
+
+        </div>   
+
+
+        <div class="contenido">
+            <div class="content-container">
+
+                <div class="lista-pelis-contenedor">
+                    <h2>Lo ultimo</h2>
+
+                    <div class="lista-pelis-slider">
+                        <div class="lista-pelis">
+                            <div class="pelis">
+                                <img class="peli-1" src="../Images/Bat.jpg" alt="Batman"/>
+                                <span class="lista-pelis-item">Estreno!</span> 
+                                <p class="descripcion-peli">Batman explora la corrupcion existente 
+                                    en la ciudad de Gotham y el vínculo de esta con su propia familia.</p>
+                                <button class="boton-peli">Ver</button>
+                            </div>
+                            <div class="pelis">
+                                <img class="peli-2" src="../Images/John.jpg" alt="John Wick"/>
+                                <span class="lista-pelis-item">Estreno!</span> 
+                                <p class="descripcion-peli">Una exploracion de las aventuras, las desgarradoras 
+                                    experiencias y las hazañas del legendario asesino a sueldo, John Wick.</p>
+                                <button class="boton-peli">Ver</button>
+                            </div>
+                            <div class="pelis">
+                                <img class="peli-3" src="../Images/gato_con_botas.jpg" alt="Gato con botas"/>
+                                <span class="lista-pelis-item">Estreno!</span> 
+                                <p class="descripcion-peli">Mucho antes de conocer a Shrek, tiene que huir de la 
+                                    ciudad cuando comienzan a sospechar que ha robado un banco.</p>
+                                <button class="boton-peli">Ver</button>
+                            </div>
+                            <div class="pelis">
+                                <img class="peli-4" src="../Images/scale.jpg" alt="Una esposa de mentiras"/>
+                                <span class="lista-pelis-item">Estreno!</span> 
+                                <p class="descripcion-peli">El cirujano Danny decide contratar a su ayudante Katherine, 
+                                    una madre soltera con hijos, para que finjan ser su familia.</p>
+                                <button class="boton-peli">Ver</button>
+                            </div>
+                            <div class="pelis">
+                                <img class="peli-5" src="../Images/IMG_5049.jpg" alt="Scream"/>
+                                <span class="lista-pelis-item">Estreno!</span> 
+                                <p class="descripcion-peli">Cuatro supervivientes de los asesinatos de Ghostface dejan 
+                                    atras Woodsboro para empezar de nuevo en Nueva York.</p>
+                                <button class="boton-peli">Ver</button>
+                            </div>
+                        </div>
+                    </div>
+
+
                 </div>
-                <div class="pelicula">
-                    <img src="Colocar la direccion de imagenes">
-                    <h3>Nombre de la Película</h3>
-                    <p>Descripción de la película.</p>
-                </div>
-                <!-- Agregar más películas aquí -->
+
             </div>
+
         </div>
         <footer>
             <p>2023 Cine Estudiantes</p>

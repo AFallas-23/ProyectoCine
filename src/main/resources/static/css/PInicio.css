@@ -71,37 +71,6 @@
     padding: 10px;
 }
 
-.cartelera {
-    margin-top: 50px;
-}
-
-.cartelera h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-}
-
-.peliculas {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.pelicula {
-    width: 300px;
-    margin: 20px;
-}
-
-.pelicula img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-}
-
-.pelicula h3 {
-    font-size: 24px;
-    margin-top: 10px;
-    margin-bottom: 5px;
-}
 
 .pelicula p {
     font-size: 16px;
@@ -173,6 +142,7 @@ body {
     height: 100vh;
     font-family: "Roboto", sans-serif;
     transition: 0.25s;
+    z-index: 1;
 }
 body.dark {
     background: #212123;
@@ -359,4 +329,181 @@ footer {
 
     text-align: center;
     padding: 50px;
+}
+
+
+
+
+
+.contenido {
+	margin: 50px;
+       background: linear-gradient(#8b80f9, #212123);
+        min-height: calc(100vh - 50px);
+        color: white;
+        z-index: 2;
+}
+.content-container{
+    margin-left: 50px;
+}
+
+.pelis-contenido{
+    height: 50vh;
+    padding: 50px;
+}
+
+.titulo-peli{
+    width: 200px;
+    
+}
+
+.sinopsis{
+    width: 500px;
+    color: white;
+    margin: 30px 0;
+}
+
+.comprar{
+    background-color: grey;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border:none;
+    outline: none;
+    font-weight: bold;
+}
+.lista-pelis-contenedor{
+    padding: 20px;
+}
+
+.lista-pelis{
+    display: flex;
+    align-items: center;
+    height: 300px;
+}
+
+.pelis{
+    margin-right: 30px;
+    position: relative;
+
+}
+
+.pelis:hover .peli-1{
+    transform: scale(1.2);
+    margin: 0 30px;
+    opacity: 0.5;
+}
+
+.pelis:hover .peli-2{
+    transform: scale(1.2);
+    margin: 0 30px;
+    opacity: 0.5;
+}
+
+.pelis:hover .peli-3{
+    transform: scale(1.2);
+    margin: 0 30px;
+    opacity: 0.5;
+}
+
+.pelis:hover .peli-4{
+    transform: scale(1.2);
+    margin: 0 30px;
+    opacity: 0.5;
+}
+
+.pelis:hover .peli-5{
+    transform: scale(1.2);
+    margin: 0 30px;
+    opacity: 0.5;
+}
+
+.pelis:hover .lista-pelis-item,
+.pelis:hover .descripcion-peli,
+.pelis:hover .boton-peli{
+    opacity: 1;
+    
+    
+    
+}
+
+.peli-1{
+    width: 270px;
+    height: 200px;
+    object-fit: cover;
+    transition: all 1s ease-in-out;
+}
+
+.peli-2{
+    width: 270px;
+    height: 200px;
+    object-fit: cover;
+    transition: all 1s ease-in-out;
+}
+
+.peli-3{
+    width: 270px;
+    height: 200px;
+    object-fit: cover;
+    transition: all 1s ease-in-out;
+}
+
+.peli-4{
+    width: 270px;
+    height: 200px;
+    object-fit: cover;
+    transition: all 1s ease-in-out;
+}
+
+.peli-5{
+    width: 270px;
+    height: 200px;
+    object-fit: cover;
+    transition: all 1s ease-in-out;
+}
+
+.lista-pelis-item{
+    background: #333;
+    padding: 0 10px;
+    font-size: 32px;
+    font-weight: bold;
+    position: absolute;
+    top: 10%;
+    left: 50px;
+    opacity: 0;
+    transition: 1s all ease-in-out;
+}
+
+.descripcion-peli{
+    background: #333;
+    padding: 10px;
+    font-size: 14px;
+    position: absolute;
+    top: 30%;
+    left: 50px;
+    width: 230px;
+    opacity: 0;
+    transition: 1s all ease-in-out;
+}
+
+.boton-peli{
+    padding: 10px;
+    background-color: grey;
+    color: white;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    bottom: 20px;
+    left: 50px;
+    opacity: 0;    
+    transition: 1s all ease-in-out;
+}
+
+
+footer {
+	background-color: grey;
+	color: black;
+	text-align: center;
+	padding: 50px;
 }
