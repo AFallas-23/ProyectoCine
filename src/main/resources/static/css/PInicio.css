@@ -133,6 +133,7 @@ body #user-button .u-main iframe {
 
 
 
+
 body {
 
     flex-direction: row;
@@ -144,6 +145,7 @@ body {
     transition: 0.25s;
     z-index: 1;
 }
+
 body.dark {
     background: #212123;
     color: white;
@@ -169,6 +171,10 @@ body .options {
     max-width: 900px;
     width: calc(100% - 100px);
     height: 400px;
+    position: relative;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 @media screen and (max-width: 718px) {
     body .options {
@@ -324,7 +330,10 @@ body .options .option .label .info .main {
 }
 body .options .option .label .info .sub {
     transition-delay: 0.1s;
+
 }
+
+
 footer {
 
     text-align: center;
@@ -335,13 +344,15 @@ footer {
 
 
 
-.contenido {
+contenido {
 	margin: 50px;
        background: linear-gradient(#8b80f9, #212123);
         min-height: calc(100vh - 50px);
         color: white;
         z-index: 2;
+        margin: 400px;
 }
+
 .content-container{
     margin-left: 50px;
 }
@@ -506,4 +517,5 @@ footer {
 	color: black;
 	text-align: center;
 	padding: 50px;
+        
 }
