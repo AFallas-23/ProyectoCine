@@ -40,7 +40,6 @@ public class ClienteController {
     @GetMapping("/cliente")
     public String indexC(Model model){
         List<Cliente> listaClientes = clienteService.getAllCliente();
-        model.addAttribute("titulo", "Clientes registrados");
         model.addAttribute("clientes", listaClientes);
         return "clientes";
     }

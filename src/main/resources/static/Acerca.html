@@ -3,6 +3,7 @@
 <html lang="es">
     <head>
         <title>Acerca de nosotros</title>
+        <link rel="shortcut icon" href="../Images/logo-cine.png">
         <link rel="stylesheet" type="text/css" href="Acerca.css">
         <link rel="stylesheet" href="css/Acerca.css"> 
     </head>
@@ -60,8 +61,15 @@
 
 
         </div>
+
         <footer>
-            <p>2023 Cine Estudiantes</p>
+            <ul class="footer-menu-container">
+                <a class="idiom-item" th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}"
+                   th:href="${urlBuilder.replaceQueryParam('lang','es').toUriString()}">ES</a>
+                <a class="idiom-item" th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}"
+                   th:href="${urlBuilder.replaceQueryParam('lang','en').toUriString()}">EN</a>
+            </ul>
+            <span class="copyright">&copy;2023. Todos los derechos reservados.</span>
         </footer>
 
 

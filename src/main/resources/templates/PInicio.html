@@ -4,8 +4,8 @@
       xmlns:sec="http://thymeleaft.org/extras/spring-security"
       lang="es">
     <head>
-        <title>Pagina de inicio</title>
-
+        <title th:text="#{TiInicio}"></title>
+        <link rel="shortcut icon" href="../Images/logo-cine.png">
         <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css'>
         <link rel='stylesheet' href='https://static.fontawesome.com/css/fontawesome-app.css'>
         <link rel='stylesheet' href='https://pro.fontawesome.com/releases/v5.2.0/css/all.css'>
@@ -16,8 +16,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" >
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>    
-   
-    
+
+
     </head>
 
 
@@ -25,7 +25,7 @@
         <!-- Navbar  -->
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3">
             <div class="container">
-                <a class="navbar-brand" href="#">Cine</a>
+                <a class="navbar-brand" href="#" th:text="#{Cine}"></a>
                 <button
                     class="navbar-toggler"
                     type="button"
@@ -43,29 +43,29 @@
                     <ul class="navbar-nav">       
 
                         <li sec:authorize="hasRole('ROLE_USER')" class="nav-item">
-                            <a class="nav-link text-white" href="#" th:href="@{~/facturaC}">Comprar</a>
+                            <a class="nav-link text-white" href="#" th:href="@{~/facturaC}" th:text="#{Comprar}"></a>
                         </li>
                         <li sec:authorize="hasAnyRole('ROLE_ADMIN','ROLE_MANAGER')" class="nav-item"> 
-                            <a class="nav-link text-white" href="#" th:href="@{~/factura}">Facturas</a>
+                            <a class="nav-link text-white" href="#" th:href="@{~/factura}" th:text="#{Facturas}"></a>
                         </li>
                         <li sec:authorize="hasAnyRole('ROLE_ADMIN','ROLE_MANAGER')" class="nav-item"> 
-                            <a class="nav-link text-white" href="#" th:href="@{~/cliente}">Clientes</a>
+                            <a class="nav-link text-white" href="#" th:href="@{~/cliente}" th:text="#{Clientes}"></a>
                         </li>
                         <!-- Para dar opcion de compra a administrador -->
                         <li sec:authorize="hasAnyRole('ROLE_ADMIN','ROLE_MANAGER')" class="nav-item"> 
-                            <a class="nav-link text-white" href="#" th:href="@{~/facturaC}">Comprar</a>
+                            <a class="nav-link text-white" href="#" th:href="@{~/facturaC}" th:text="#{Comprar}"></a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="Snacks.html">Snacks</a>
+                            <a class="nav-link text-white" href="Snacks.html" th:text="#{Snacks}"></a>
                         </li>
 
                         <li sec:authorize="isAuthenticated()" class="btn btn-outline-danger my-2 my-sm-0 btn-sm"> 
-                            <a class="nav-link text-white" href="#" th:href="@{~/logout}">Cerrar sesion</a>
+                            <a class="nav-link text-white" href="#" th:href="@{~/logout}" th:text="#{Logout}"></a>
                         </li>
 
                         <li sec:authorize="isAnonymous()" class="btn btn-outline-info my-2 my-sm-0 btn-sm"> 
-                            <a class="nav-link text-white" href="#" th:href="@{~/login}">Iniciar sesion</a>
+                            <a class="nav-link text-white" href="#" th:href="@{~/login}" th:text="#{Login}"></a>
                         </li>
                     </ul>
 
@@ -78,7 +78,7 @@
                 <div class="shadow"></div>
                 <div class="label">
                     <div class="icon">
-                         <img src="../Images/icons.png" />
+                        <img src="../Images/icons.png" />
                     </div>
                     <div class="info">
                         <div class="main">Batman</div>
@@ -102,7 +102,7 @@
                 <div class="shadow"></div>
                 <div class="label">
                     <div class="icon">
-                            <img src="../Images/icons.png" />
+                        <img src="../Images/icons.png" />
                     </div>
                     <div class="info">
                         <div class="main">Scream 6</div>
@@ -114,7 +114,7 @@
                 <div class="shadow"></div>
                 <div class="label">
                     <div class="icon">
-                           <img src="../Images/icons.png" />
+                        <img src="../Images/icons.png" />
                     </div>
                     <div class="info">
                         <div class="main">John</div>
@@ -126,7 +126,7 @@
                 <div class="shadow"></div>
                 <div class="label">
                     <div class="icon">
-                      <img src="../Images/icons.png" />
+                        <img src="../Images/icons.png" />
                     </div>
                     <div class="info">
                         <div class="main">Blade Runner 2049</div>
@@ -194,8 +194,15 @@
         </div>
 
     </div>
+    
     <footer>
-        <p>2023 Cine Estudiantes</p>
+        <ul class="footer-menu-container">
+            <a class="idiom-item" th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}"
+               th:href="${urlBuilder.replaceQueryParam('lang','es').toUriString()}">ES</a>
+            <a class="idiom-item" th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}"
+               th:href="${urlBuilder.replaceQueryParam('lang','en').toUriString()}">EN</a>
+        </ul>
+        <span class="copyright" th:text="#{Copyright}"></span>
     </footer>
 
     <script src="NavBar.js"></script>

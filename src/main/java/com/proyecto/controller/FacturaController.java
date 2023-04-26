@@ -46,7 +46,6 @@ public class FacturaController {
     @GetMapping("/factura")
     public String index(Model model){
         List<Factura> listaFactura = facturaService.getAllFactura();
-        model.addAttribute("titulo", "Historial de facturas");
         model.addAttribute("facturas", listaFactura);
         return "facturas";
     }

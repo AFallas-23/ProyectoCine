@@ -1,70 +1,79 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Cobros Cine</title>
-	<link rel="stylesheet" type="text/css" href="./../CSS/cobros.css">
-</head>
-<body>
-	<header>
-		<img src="../Images/cine_logo.png" />
-		<h1>Cobros Cine</h1>
-	</header>
-	<main>
-		<h2>Informacion de la factura</h2>
-		<div class="seccion-boletos">
-			<h3>Boletos comprados</h3>
-			<table>
-				<thead>
-					<tr>
-						<th>Pelicula</th>
-						<th>Hora</th>
-						<th>Precio</th>
-						<th>Asiento</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>0- Matrix</td>
-						<td>7 pm</td>
-						<td>2000</td>
-						<td>+20</td>
-					</tr>
-					<tr>
-						<td>2- El conjuro</td>
-						<td>9 pm</td>
-						<td>3000</td>
-						<td>+16</td>
-					</tr>
-                                        <tr>
-						<td>0- John Wick 4</td>
-						<td>3 pm</td>
-						<td>2000</td>
-						<td>todo publico</td>
-                                        </tr>
-                                        <tr>
-						<td>0- El gato con botas</td>
-						<td>4 pm</td>
-						<td>2500</td>
-						<td>todo publico</td>
-                                        </tr>
-				</tbody>
-			</table>
-		</div>
-		<div class="seccion-snacks">
-			<h3>Snacks comprados</h3>
-			<ul>
-				<li>Empaquetados - 0</li>
-				<li>Combos - 6000</li>
-				<li>Nachos - 0</li>
-                                <li>Palomitas - 0</li>
-			</ul>
-		</div>
-		<div class="total">
-			<h3>Total a pagar: 12000</h3>
-		</div>
-	</main>
-	<footer>
-		<p>© 2023 Facturacion de Cine</p>
-	</footer>
-</body>
+    <head>
+        <title>Cobros Cine</title>        
+        <link rel="shortcut icon" href="../Images/logo-cine.png">
+        <link rel="stylesheet" type="text/css" href="./../CSS/cobros.css">
+    </head>
+    <body>
+        <header>
+            <img src="../Images/cine_logo.png" />
+            <h1>Cobros Cine</h1>
+        </header>
+        <main>
+            <h2>Informacion de la factura</h2>
+            <div class="seccion-boletos">
+                <h3>Boletos comprados</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Pelicula</th>
+                            <th>Hora</th>
+                            <th>Precio</th>
+                            <th>Asiento</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>0- Matrix</td>
+                            <td>7 pm</td>
+                            <td>2000</td>
+                            <td>+20</td>
+                        </tr>
+                        <tr>
+                            <td>2- El conjuro</td>
+                            <td>9 pm</td>
+                            <td>3000</td>
+                            <td>+16</td>
+                        </tr>
+                        <tr>
+                            <td>0- John Wick 4</td>
+                            <td>3 pm</td>
+                            <td>2000</td>
+                            <td>todo publico</td>
+                        </tr>
+                        <tr>
+                            <td>0- El gato con botas</td>
+                            <td>4 pm</td>
+                            <td>2500</td>
+                            <td>todo publico</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="seccion-snacks">
+                <h3>Snacks comprados</h3>
+                <ul>
+                    <li>Empaquetados - 0</li>
+                    <li>Combos - 6000</li>
+                    <li>Nachos - 0</li>
+                    <li>Palomitas - 0</li>
+                </ul>
+            </div>
+            <div class="total">
+                <h3>Total a pagar: 12000</h3>
+            </div>
+        </main>
+
+        <footer>
+            <ul class="footer-menu-container">
+                <a class="idiom-item" th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}"
+                   th:href="${urlBuilder.replaceQueryParam('lang','es').toUriString()}">ES</a>
+                <a class="idiom-item" th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}"
+                   th:href="${urlBuilder.replaceQueryParam('lang','en').toUriString()}">EN</a>
+            </ul>
+            <span class="copyright">&copy;2023. Todos los derechos reservados.</span>
+        </footer>
+
+    </body>
 </html>

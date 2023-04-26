@@ -3,10 +3,11 @@
 <html lang="es">
     <head>
         <title>Detalles de la pelicula</title>
+        <link rel="shortcut icon" href="../Images/logo-cine.png">
         <link rel="stylesheet" type="text/css" href="Infopeli.css">
         <link rel="stylesheet" href="css/InfoPeli.css"> 
     </head>
-    
+
     <body style="background-color:black;">
 
         <!-- Navbar  -->
@@ -47,7 +48,7 @@
                 <div class="pelis-contenido"
                      style="background: linear-gradient(to bottom, rgba(0,0,0,0, #151515) url('../Images/cine.jpg')"
                      > 
-                    <img class="titulo-peli" src="../Images/Batman.jpg" alt="Imagen de la pelicula"/>
+                    <img class="titulo-peli" src="../Images/Bat.jpg" alt="Imagen de la pelicula"/>
                     <h1>Sinopsis:</h1>
                     <p class="sinopsis">En su segundo año luchando contra el crimen, 
                         Batman explora la corrupcion existente en la ciudad de Gotham 
@@ -57,11 +58,11 @@
                 </div>
                 <div class="lista-pelis-contenedor">
                     <h2>Lo ultimo</h2>
-                    
+
                     <div class="lista-pelis-slider">
                         <div class="lista-pelis">
                             <div class="pelis">
-                                <img class="peli-1" src="../Images/Batman.jpg" alt="Batman"/>
+                                <img class="peli-1" src="../Images/Bat.jpg" alt="Batman"/>
                                 <span class="lista-pelis-item">Estreno!</span> 
                                 <p class="descripcion-peli">Batman explora la corrupcion existente 
                                     en la ciudad de Gotham y el vínculo de esta con su propia familia.</p>
@@ -97,23 +98,23 @@
                             </div>
                         </div>
                     </div>
-                    
-                    
+
+
                 </div>
 
             </div>
 
         </div>
 
-        <main>
-            <article id="detalles-pelicula">
-                <!-- La información se carga en base de datos -->
-            </article>
-        </main>
         <footer>
-            <p>2023 Cine Estudiantes</p>
+            <ul class="footer-menu-container">
+                <a class="idiom-item" th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}"
+                   th:href="${urlBuilder.replaceQueryParam('lang','es').toUriString()}">ES</a>
+                <a class="idiom-item" th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}"
+                   th:href="${urlBuilder.replaceQueryParam('lang','en').toUriString()}">EN</a>
+            </ul>
+            <span class="copyright">&copy;2023. Todos los derechos reservados.</span>
         </footer>
-
         <script src="NavBar.js"></script>
         <script type="text/javascript">
             var nav = document.querySelector('nav');

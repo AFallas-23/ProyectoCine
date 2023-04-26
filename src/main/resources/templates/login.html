@@ -2,8 +2,9 @@
 <html xmlns:th="http://www.thymeleaf.org"     
       xmlns:sec="http://thymeleaft.org/extras/spring-security">
     <head>
-        <title>Iniciar Sesion</title>
+        <title th:text="#{TiLogin}" ></title>
         <link rel="stylesheet"  th:href="@{/css/Login.css}">
+        <link rel="shortcut icon" href="../Images/logo-cine.png">
         <!-- CSS only -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -17,16 +18,16 @@
         <header>
             <nav>
                 <ul>
-                    <button class="boton-inicio" role="link" onclick="window.location = 'PInicio'">Inicio</button>
-                    <button class="boton-acercade">Acerca de</button>
-                    <button class="boton-contacto">Contacto</button>
+                    <button class="boton-inicio" role="link" onclick="window.location = 'PInicio'" th:text="#{Inicio}"></button>
+                    <button class="boton-acercade" th:text="#{Acerca}" ></button>
+                    <button class="boton-contacto" th:text="#{Contacto}"></button>
                 </ul>
             </nav>
         </header>
 
         <main>
             <div class="login">
-                <h2>Administrativo</h2>
+                <h2 th:text="#{IniSesion}"></h2>
                 <form name="f" th:action="@{/login}" method="post"> 
                     <fieldset>
                         <!-- Thymeleaf + Spring Security error display -->
@@ -38,26 +39,37 @@
                         </div>
                         <!-- Login Controls -->
                         <div class="form-group">
-                            <label for="txtUsername">Username</label>
+                            <label class="Campo" for="txtUsername" th:text="#{Usuario}"></label>
                             <!-- Los id son obligatorios asi -->
                             <input type="text" class="form-control" id="username" name="username" 
                                    placeholder="Username">
                         </div>
                         <div class="form-group">
-                            <label for="txtPassword">Password</label>
+                            <label for="txtPassword" class="Campo" th:text="#{Contra}"></label>
                             <input type="password" class="form-control" id="password" name="password"
                                    placeholder="Password">
                         </div>
                         <!-- Login Button -->
                         <div class="form-actions" style="margin-top: 12px;">
-                            <button type="submit" class="btn btn-success">Iniciar sesion</button>
+                            <button type="submit" class="btn btn-success" th:text="#{Aceptar}"></button>
                         </div>
                     </fieldset>
                 </form>
 
-                <a class="mt-5" href="/clienteR" role="button">Registrarse</a>
+                <a class="mt-5" href="/clienteR" role="button" th:text="#{Registrarse}"></a>
 
             </div>
+
+            <!-- <footer>
+                <ul class="footer-menu-container">
+                    <a class="idiom-item" th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}"
+                       th:href="${urlBuilder.replaceQueryParam('lang','es').toUriString()}">ES</a>
+                    <a class="idiom-item" th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}"
+                       th:href="${urlBuilder.replaceQueryParam('lang','en').toUriString()}">EN</a>
+                </ul>
+                <span class="copyright">&copy;2023. Todos los derechos reservados.</span>
+            </footer> -->
+
         </main>
 
         <script src="./script.js"></script>
