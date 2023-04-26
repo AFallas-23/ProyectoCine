@@ -18,33 +18,30 @@ body {
 	font-family: Arial, sans-serif;
 	margin: 0;
 	padding: 0;
+
 }
 
 .contenido {
-	margin: 50px;
-        background-color: black;
-        min-height: calc(100vh - 50px);
-        color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(#8b80f9, #212123);
 }
-.content-container{
-    margin-left: 50px;
+
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
+
 
 .pelis-contenido{
     height: 50vh;
     padding 50px;
 }
 
-.titulo-peli{
-    width: 200px;
-    
-}
 
-.sinopsis{
-    width: 500px;
-    color: white;
-    margin: 30px 0;
-}
 
 
 footer {
