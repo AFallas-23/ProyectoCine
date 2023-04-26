@@ -14,5 +14,6 @@ public interface IClienteService {
     public void saveCliente (Cliente cliente);
     public void delete (long id);
     public Cliente findByNombre (String username);
+    public String encryptPassword(String password);
  
 }

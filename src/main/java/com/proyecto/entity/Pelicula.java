@@ -26,7 +26,7 @@ public class Pelicula {
    
    
     private String nombre;
-    private String fecha_estreno;
+    private String descripcion;
 
     public long getId() {
         return id;
@@ -44,12 +44,12 @@ public class Pelicula {
         this.nombre = nombre;
     }
 
-    public String getFecha_estreno() {
-        return fecha_estreno;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setFecha_estreno(String fecha_estreno) {
-        this.fecha_estreno = fecha_estreno;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
     
     

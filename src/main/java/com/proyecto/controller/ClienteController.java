@@ -33,7 +33,8 @@ public class ClienteController {
         cliente.setPermissions("USER");
         cliente.setRoles("USER");
         cliente.setActive(1);
-        //Falta encriptar contraseña
+        //Encriptar contraseña
+        cliente.setPassword(clienteService.encryptPassword(cliente.getPassword()));
         clienteService.saveCliente(cliente);
         return "redirect:/login";
     }

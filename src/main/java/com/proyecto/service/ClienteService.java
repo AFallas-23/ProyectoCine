@@ -5,6 +5,7 @@ import com.proyecto.entity.Cliente;
 import com.proyecto.repository.ClienteRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Service;
 
 /**
@@ -40,4 +41,11 @@ public class ClienteService implements IClienteService{
     public Cliente findByNombre(String username) {
         return clienteRepository.findByNombre(username);
     }
+
+    @Override
+    public String encryptPassword(String password) {
+        return BCrypt.hashpw(password, BCrypt.gensalt());
+    }
+
+
 }
