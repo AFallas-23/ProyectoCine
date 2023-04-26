@@ -22,7 +22,7 @@ public class Factura {
     
     private long num_factura;
     
-    private String total;
+    private int total;
     private String fecha;
     
     @ManyToOne  //FK
@@ -49,11 +49,11 @@ public class Factura {
         this.num_factura = num_factura;
     }
 
-    public String getTotal() {
+    public int getTotal() {
         return total;
     }
 
-    public void setTotal(String total) {
+    public void setTotal(int total) {
         this.total = total;
     }
 

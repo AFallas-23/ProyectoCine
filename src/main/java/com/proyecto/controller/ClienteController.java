@@ -29,6 +29,7 @@ public class ClienteController {
     
     @PostMapping("/saveC")
     public String guardarCliente(@ModelAttribute Cliente cliente){  
+        //Se definen rangos y estado automaticamente
         cliente.setPermissions("USER");
         cliente.setRoles("USER");
         cliente.setActive(1);

@@ -10,6 +10,23 @@
     </head>
 
     <body>
+        <!-- Nav sencillo solo para poder regresar -->
+        <header th:fragment="header">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="#">Cine</a>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" th:href="@{~/PInicio}"><i class="fa fa-home"></i>Inicio</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        
+        
+        
         <h1 th:text="#{TiCliente}"></h1>
 
         <table class="table table-dark table-striped">
@@ -26,7 +43,7 @@
                 </tr>
             </thead>
             <tbody>
-            <th:block th:each="user : ${clientes}"> <!-- Recorre la lista que le pasa el controller, se repite como un while -->
+            <th:block th:each="user : ${clientes}"> 
                 <tr>
                     <td th:text="${user.getNombre}"></td>
                     <td th:text="${user.getApellidos}"></td>

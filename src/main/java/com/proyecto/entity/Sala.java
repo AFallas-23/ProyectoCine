@@ -24,7 +24,7 @@ public class Sala {
    
     private String max_personas;
     private String tipo_sala; /*VIP, Comun, 3D, VIP 3D*/
-    private String costo_entrada;
+    private int costo_entrada;
 
     public long getNum_sala() {
         return num_sala;
@@ -50,11 +50,11 @@ public class Sala {
         this.tipo_sala = tipo_sala;
     }
 
-    public String getCosto_entrada() {
+    public int getCosto_entrada() {
         return costo_entrada;
     }
 
-    public void setCosto_entrada(String costo_entrada) {
+    public void setCosto_entrada(int costo_entrada) {
         this.costo_entrada = costo_entrada;
     }
     

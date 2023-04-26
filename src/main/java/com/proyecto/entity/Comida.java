@@ -25,7 +25,7 @@ public class Comida {
    
    
     private String nombre;
-    private String precio;
+    private int precio;
 
     public long getId() {
         return id;
@@ -43,11 +43,11 @@ public class Comida {
         this.nombre = nombre;
     }
 
-    public String getPrecio() {
+    public int getPrecio() {
         return precio;
     }
 
-    public void setPrecio(String precio) {
+    public void setPrecio(int precio) {
         this.precio = precio;
     }
     
