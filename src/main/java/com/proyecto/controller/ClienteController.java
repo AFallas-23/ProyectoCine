@@ -12,10 +12,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-/**
- *
- * @author Fernando
- */
 @Controller
 public class ClienteController {
     //Para poder realizar registros de clientes

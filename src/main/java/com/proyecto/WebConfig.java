@@ -9,15 +9,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
-/**
- *
- * @author Fernando
- */
-
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
+    
     @Bean
-    public SessionLocaleResolver localeResolver(){
+    public SessionLocaleResolver localeResolver() {
         var slr = new SessionLocaleResolver();
         slr.setDefaultLocale(new Locale("es"));
         return slr;
