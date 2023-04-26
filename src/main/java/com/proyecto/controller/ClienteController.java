@@ -17,6 +17,7 @@ public class ClienteController {
     //Para poder realizar registros de clientes
     //Hay que buscar como poder encriptar la contraseña para guardarla encripta en la base da datos
     //BCrypt
+    
     @Autowired
     private IClienteService clienteService;
     
