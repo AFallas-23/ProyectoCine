@@ -142,7 +142,7 @@
                 <a class="idiom-item" th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}"
                    th:href="${urlBuilder.replaceQueryParam('lang','en').toUriString()}">EN</a>
             </ul>
-            <span class="copyright">&copy;2023. Todos los derechos reservados.</span>
+            <span class="copyright" th:text="#{Copyright}"></span>
         </footer>
 
         <script src="NavBar.js"></script>
