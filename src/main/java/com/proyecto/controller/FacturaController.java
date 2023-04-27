@@ -54,7 +54,7 @@ public class FacturaController {
     @GetMapping("/compraR")
     public String compraR(Model model) {
         List<Factura> listaFactura = facturaService.getAllFactura();
-        Factura ultFactura = facturaService.getFacturaById(listaFactura.size()-1);
+        Factura ultFactura = facturaService.getFacturaById(listaFactura.size());
         
         model.addAttribute("facturas", ultFactura);
         return "compraR";
