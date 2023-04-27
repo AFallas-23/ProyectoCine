@@ -8,8 +8,24 @@
     <body>
         <header>
             <h1>Venta de snacks</h1>
-            <h2>Snacks disponibles</h2>
             <section id="snacks">
+                <style>
+                    h1 {
+                        position: relative;
+                        text-align: center;
+                        color: white;
+                        background-color: black;
+                        padding: 10px;
+                        margin: 0 auto;
+                        width: 100%;
+                        transition: width 0.5s ease-in-out;
+                        border-radius: 10px;
+                        cursor: pointer;
+                    }
+
+                    h1:hover {
+                        width: 60%;
+                    } </style>
         </header>
         <nav>
             <ul>
@@ -19,13 +35,17 @@
             </ul>
         </nav>
         <section>
+
             <article>
                 <h2>Snack 1</h2>
-                <img src="images/snack1-2.jpg" alt="Chocolates y frituras">
-                <p>Empaquetados</p>
-                <p>1000-2000</p>
-                <button>Comprar</button>
+                <div class="product-info">
+                    <img src="images/snack1-2.jpg" alt="Chocolates y frituras">
+                    <p>Descripcion del producto 1</p>
+                     <p>1000-2000</p>
+                    <button>Comprar</button>
+                </div>
             </article>
+
             <article>
                 <h2>Snack 2</h2>
                 <img src="images/snack2-2.jpg" alt="Combos">
@@ -36,7 +56,7 @@
             <article>
                 <h2>Snack 3</h2>
                 <img src="images/snack3-2.jpg" alt="Nachos">
-                <p>Tortillas tostadas banadas en salsa de queso</p>
+                <p>Tortillas tostadas en salsa de queso</p>
                 <p>2000</p>
                 <button>Comprar</button>
             </article>

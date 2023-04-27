@@ -14,16 +14,19 @@ body {
     margin: 0;
     padding: 0;
     font-family: Verdana;
-    background: linear-gradient(#8b80f9, #212123);
     background-image: url("../images/snack1-2.jpg");
     background-image:url("../images/snack2-2.jpg");
     background-image: url("../images/snack3-2.jpg");
     background-image: url("../images/snack4-2.jpg");
     background-repeat: repeat-x;
 }
+body {
+  background-image: none;
+    background: linear-gradient(#8b80f9, #212123);
+      height: 100vh;
+}
 
 header {
-    background-color: #8b80f9;
     padding: 10px;
     text-align: center;
 }
@@ -35,7 +38,6 @@ h1 {
 }
 
 nav {
-    background: linear-gradient(#8b80f9, #212123);
     padding: 10px;
     text-align: center;
 }
@@ -65,7 +67,7 @@ section {
 }
 
 article {
-    background: linear-gradient(#8b80f9, #212123);
+ background-color: white;
     box-shadow: 0px 0px 10px #ccc;
     margin: 20px;
     padding: 10px;
@@ -81,6 +83,10 @@ article h2 {
 article img {
     max-width: 100%;
     height: auto;
+}
+article img {
+  width: 250px;
+  height: 250px;
 }
 
 button {
@@ -133,4 +139,14 @@ footer {
     color: #f2f2f2;
     opacity: 0.3;
     text-align: center;
+}
+nav ul li a {
+  color: black;
+  padding: 5px 10px;
+  border: 1px solid black;
+  transition: border-color 0.2s ease-in-out;
+}
+
+nav ul li a:hover {
+  border-color: white;
 }
