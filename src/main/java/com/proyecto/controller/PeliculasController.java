@@ -2,6 +2,7 @@
 package com.proyecto.controller;
 
 
+
 import com.proyecto.entity.Pelicula;
 import com.proyecto.service.IPeliculaService;
 import java.util.List;
@@ -9,15 +10,46 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class PeliculasController {
+    @Autowired
+    private IPeliculaService peliculaService;
+    //Mostrar todas las peliculas al admin
+    @GetMapping("/peliculasA")
+    public String indexC(Model model){
+        List<Pelicula> listaPelicula = peliculaService.getAllPelicula();
+        model.addAttribute("peliculas", listaPelicula);
+        return "peliculasA";
+    }
+    
+    @PostMapping("/savePelicula")  //Esta funcion es para guardar el cliente que edita el admin
+    public String guardarPelicula(@ModelAttribute Pelicula pelicula){  
+        peliculaService.savePelicula(pelicula);
+        return "redirect:/peliculasA";
+    }
+    
+    @GetMapping("/editPelicula/{id}")
+    public String editarPelicula(@PathVariable("id") Long idPelicula, Model model){
+        Pelicula pelicula = peliculaService.getPeliculaById(idPelicula);
+        model.addAttribute("pelicula", pelicula);
+        return "peliculasE"; //Es similar al registro pero tiene más funciones para el administrador
+    }
+    
+    @GetMapping("/deletePelicula/{id}")
+    public String eliminarPelicula(@PathVariable("id") Long idPelicula){
+        peliculaService.delete(idPelicula);
+        return "redirect:/peliculasA";
+    }
+
     //Esto le va a enviar cada pelicula en la base de datos a la pagina de inicio
     //Ya no hace falta el InicioController
     
     
-    @Autowired
-    private IPeliculaService peliculaService;
+    
     
     /*
     1Bat

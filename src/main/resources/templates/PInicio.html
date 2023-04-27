@@ -51,6 +51,9 @@
                         <li sec:authorize="hasAnyRole('ROLE_ADMIN','ROLE_MANAGER')" class="nav-item"> 
                             <a class="nav-link text-white" href="#" th:href="@{~/cliente}" th:text="#{Clientes}"></a>
                         </li>
+                        <li sec:authorize="hasAnyRole('ROLE_ADMIN','ROLE_MANAGER')" class="nav-item"> 
+                            <a class="nav-link text-white" href="#" th:href="@{~/peliculasA}" th:text="#{TiPeliculas}"></a>
+                        </li>
                         <!-- Para dar opcion de compra a administrador -->
                         <li sec:authorize="hasAnyRole('ROLE_ADMIN','ROLE_MANAGER')" class="nav-item"> 
                             <a class="nav-link text-white" href="#" th:href="@{~/facturaC}" th:text="#{Comprar}"></a>

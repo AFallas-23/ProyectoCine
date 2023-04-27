@@ -27,4 +27,14 @@ public class PeliculaService implements IPeliculaService{
         return peliculaRepository.findById(id).orElse(null);
         
     }
+    
+    @Override
+    public void savePelicula(Pelicula pelicula) {
+        peliculaRepository.save(pelicula);
+    }
+
+    @Override
+    public void delete(long id) {
+        peliculaRepository.deleteById(id);
+    }
 }
