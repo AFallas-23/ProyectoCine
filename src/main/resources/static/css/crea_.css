@@ -1,0 +1,29 @@
+
+img {
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+  transition: .5s ease;
+  
+}
+img:hover {
+  transform: scale(1.05);
+}
+
+/* Estilo para cambiar el color del texto a blanco */
+body {
+  color: white;
+  background: linear-gradient(#8b80f9, #212123);
+}
+
+/* Estilo para acercar la tabla cuando se pasa el cursor sobre ella */
+.container {
+  transition: all 0.3s ease;
+}
+
+.container:hover {
+    transform: scale(1.02);
+  transition: transform 0.3s ease-in-out;
+}
+
+
