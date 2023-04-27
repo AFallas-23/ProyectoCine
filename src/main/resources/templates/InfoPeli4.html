@@ -14,7 +14,7 @@
         <!-- Navbar  -->
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3">
             <div class="container">
-                <a class="navbar-brand" href="#">Cine</a>
+                <a class="navbar-brand" href="#" th:href="@{~/PInicio}" th:text="#{Cine}"></a>
                 <button
                     class="navbar-toggler"
                     type="button"
@@ -29,14 +29,39 @@
 
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <div class="mx-auto"></div>
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="PInicio">Inicio</a>
+                    <ul class="navbar-nav">       
+
+                        <li sec:authorize="hasRole('ROLE_USER')" class="nav-item">
+                            <a class="nav-link text-white" href="#" th:href="@{~/facturaC}" th:text="#{Comprar}"></a>
                         </li>
+                        <li sec:authorize="hasAnyRole('ROLE_ADMIN','ROLE_MANAGER')" class="nav-item"> 
+                            <a class="nav-link text-white" href="#" th:href="@{~/factura}" th:text="#{Facturas}"></a>
+                        </li>
+                        <li sec:authorize="hasAnyRole('ROLE_ADMIN','ROLE_MANAGER')" class="nav-item"> 
+                            <a class="nav-link text-white" href="#" th:href="@{~/cliente}" th:text="#{Clientes}"></a>
+                        </li>
+                        <!-- Para dar opcion de compra a administrador -->
+                        <li sec:authorize="hasAnyRole('ROLE_ADMIN','ROLE_MANAGER')" class="nav-item"> 
+                            <a class="nav-link text-white" href="#" th:href="@{~/facturaC}" th:text="#{Comprar}"></a>
+                        </li>
+
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="Snacks.html">Snacks</a>
+                            <a class="nav-link text-white" th:href="@{~/Snacks}" th:text="#{Snacks}"></a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-white" th:href="@{~/Acerca}" th:text="#{Acerca}"></a>
+                        </li>
+
+                        <li sec:authorize="isAuthenticated()" class="btn btn-outline-danger my-2 my-sm-0 btn-sm"> 
+                            <a class="nav-link text-white" href="#" th:href="@{~/logout}" th:text="#{Logout}"></a>
+                        </li>
+
+                        <li sec:authorize="isAnonymous()" class="btn btn-outline-info my-2 my-sm-0 btn-sm"> 
+                            <a class="nav-link text-white" href="#" th:href="@{~/login}" th:text="#{Login}"></a>
                         </li>
                     </ul>
+
                 </div>
             </div>
         </nav>
@@ -47,15 +72,13 @@
                      style="background: linear-gradient(to bottom, rgba(0,0,0,0, #151515) url('../Images/cine.jpg')"
                      > 
                     <img class="titulo-peli" src="../Images/scale.jpg" alt="Pelicula4"/>
-                    <h1>Sinopsis:</h1>
-                    <p class="sinopsis">El cirujano Danny decide contratar a su ayudante Katherine, una madre soltera con hijos, 
-                        para que finjan ser su familia. Su intencion es demostrarle a Palmer que su amor por ella es tan grande que 
-                        está a punto de divorciarse de su mujer.</p>
-                    <button class="comprar" role="link" onclick="window.location = 'facturaC'">Comprar entrada</button>
+                    <h1 th:text="#{Sinopsis}"></h1>
+                    <p class="sinopsis" th:text="#{SinopsisP4}"></p>
+                    <button class="comprar" role="link" onclick="window.location = 'facturaC'" th:text="#{ComprarEntrada}"></button>
                 </div>
 
                 <div class="lista-pelis-contenedor">
-                    <h5>En cartelera</h5>
+                    <h5 th:text="#{Cartelera}"></h5>
 
                     <div class="lista-pelis-slider">
                         <div class="lista-pelis">
@@ -65,7 +88,7 @@
 
                                     <span class="lista-pelis-item"><td th:text="${user.getNombre}"></span> 
                                     <p class="descripcion-peli"><td th:text="${user.getDescripcion}"></p>
-                                        <button class="boton-peli" role="link" onclick="window.location = 'InfoPeli'">Ver</button>
+                                        <button class="boton-peli" role="link" onclick="window.location = 'InfoPeli'" th:text="#{Ver}"></button>
                                 </th:block>
                             </div>
 
@@ -74,7 +97,7 @@
                                     <img class="peli-2" src="../Images/John.jpg" alt="Pelicula2"/>
                                     <span class="lista-pelis-item"><td th:text="${user.getNombre}"></span> 
                                     <p class="descripcion-peli"><td th:text="${user.getDescripcion}"></p>
-                                        <button class="boton-peli" role="link" onclick="window.location = 'InfoPeli2'">Ver</button>
+                                        <button class="boton-peli" role="link" onclick="window.location = 'InfoPeli2'" th:text="#{Ver}"></button>
                                 </th:block>
                             </div>
 
@@ -83,7 +106,7 @@
                                     <img class="peli-3" src="../Images/gato_con_botas.jpg" alt="Pelicula3"/>
                                     <span class="lista-pelis-item"><td th:text="${user.getNombre}"></span> 
                                     <p class="descripcion-peli"><td th:text="${user.getDescripcion}"></p>
-                                        <button class="boton-peli" role="link" onclick="window.location = 'InfoPeli3'">Ver</button>
+                                        <button class="boton-peli" role="link" onclick="window.location = 'InfoPeli3'" th:text="#{Ver}"></button>
                                 </th:block>
                             </div>
 
@@ -92,7 +115,7 @@
                                     <img class="peli-4" src="../Images/scale.jpg" alt="Pelicula4"/>
                                     <span class="lista-pelis-item"><td th:text="${user.getNombre}"></span> 
                                     <p class="descripcion-peli"><td th:text="${user.getDescripcion}"></p>
-                                        <button class="boton-peli" role="link" onclick="window.location = 'InfoPeli4'">Ver</button>
+                                        <button class="boton-peli" role="link" onclick="window.location = 'InfoPeli4'" th:text="#{Ver}"></button>
                                 </th:block>
                             </div>
 
@@ -101,12 +124,11 @@
                                     <img class="peli-5" src="../Images/IMG_5049.jpg" alt="Pelicula5"/>
                                     <span class="lista-pelis-item"><td th:text="${user.getNombre}"></span> 
                                     <p class="descripcion-peli"><td th:text="${user.getDescripcion}"></p>
-                                        <button class="boton-peli" role="link" onclick="window.location = 'InfoPeli5'">Ver</button>
+                                        <button class="boton-peli" role="link" onclick="window.location = 'InfoPeli5'" th:text="#{Ver}"></button>
                                 </th:block>
                             </div>
                         </div>
                     </div>
-
 
                 </div>
 

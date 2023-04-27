@@ -15,17 +15,18 @@
 }
 
 body {
-	font-family: Arial, sans-serif;
-	margin: 0;
-	padding: 0;
+    font-family: Arial, sans-serif;
+    margin: 0px;
+    padding: 0px;
 }
 
 .contenido {
-	margin: 50px;
-       background: linear-gradient(#8b80f9, #212123);
-        min-height: calc(100vh - 50px);
-        color: white;
+    margin: 65px;
+    background: linear-gradient(#8b80f9, #212123);
+    min-height: calc(100vh - 50px);
+    color: white;
 }
+
 .content-container{
     margin-left: 50px;
 }
@@ -148,7 +149,7 @@ body {
 .lista-pelis-item{
     background: #333;
     padding: 0 10px;
-    font-size: 32px;
+    font-size: 22px;
     font-weight: bold;
     position: absolute;
     top: 10%;
@@ -178,8 +179,8 @@ body {
     border: none;
     cursor: pointer;
     position: absolute;
-    bottom: 20px;
-    left: 50px;
+    bottom: 0px;
+    left: 200px;
     opacity: 0;    
     transition: 1s all ease-in-out;
 }
