@@ -10,10 +10,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-/**
- *
- * @author Fernando
- */
 @Controller
 public class PeliculasController {
     //Esto le va a enviar cada pelicula en la base de datos a la pagina de inicio
