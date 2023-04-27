@@ -27,7 +27,8 @@ public class Pelicula {
    
     private String nombre;
     private String descripcion;
-
+    private String imagen;
+    
     public long getId() {
         return id;
     }
@@ -50,6 +51,14 @@ public class Pelicula {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
     }
     
     

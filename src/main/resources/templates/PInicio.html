@@ -73,8 +73,18 @@
             </div>
         </nav>
 
+
+
+
+        <!-- Estos son datos quemados porque es solo a modo informativo -->
+        <div class="titulotaquilleras">
+            <h5>Peliculas taquilleras</h5>
+        </div>
         <div class="options">
+
+
             <div class="option" style="--optionBackground: url('../Images/Bat.jpg');">
+
                 <div class="shadow"></div>
                 <div class="label">
                     <div class="icon">
@@ -141,49 +151,59 @@
 
     </div>   
 
-
+    <!-- Acá sí contiene datos dinamicos a excepcion de las imagenes -->
     <div class="contenido">
         <div class="content-container">
 
             <div class="lista-pelis-contenedor">
-                <h2>Lo ultimo</h2>
+                <h5>En cartelera</h5>
 
                 <div class="lista-pelis-slider">
                     <div class="lista-pelis">
                         <div class="pelis">
-                            <img class="peli-1" src="../Images/Bat.jpg" alt="Batman"/>
-                            <span class="lista-pelis-item">Estreno!</span> 
-                            <p class="descripcion-peli">Batman explora la corrupcion existente 
-                                en la ciudad de Gotham y el vínculo de esta con su propia familia.</p>
-                            <button class="boton-peli">Ver</button>
+                            <th:block th:each="user : ${pelicula1}"> <!-- Acá carga la informacion de la pelicula de forma dinamica desde sql -->
+                                <img class="peli-1" src="../Images/Bat.jpg" alt="Pelicula1"/>
+
+                                <span class="lista-pelis-item"><td th:text="${user.getNombre}"></span> 
+                                <p class="descripcion-peli"><td th:text="${user.getDescripcion}"></p>
+                                    <button class="boton-peli" role="link" onclick="window.location = 'InfoPeli'">Ver</button>
+                            </th:block>
                         </div>
+
                         <div class="pelis">
-                            <img class="peli-2" src="../Images/John.jpg" alt="John Wick"/>
-                            <span class="lista-pelis-item">Estreno!</span> 
-                            <p class="descripcion-peli">Una exploracion de las aventuras, las desgarradoras 
-                                experiencias y las hazañas del legendario asesino a sueldo, John Wick.</p>
-                            <button class="boton-peli">Ver</button>
+                            <th:block th:each="user : ${pelicula2}">
+                                <img class="peli-2" src="../Images/John.jpg" alt="Pelicula2"/>
+                                <span class="lista-pelis-item"><td th:text="${user.getNombre}"></span> 
+                                <p class="descripcion-peli"><td th:text="${user.getDescripcion}"></p>
+                                    <button class="boton-peli" role="link" onclick="window.location = 'InfoPeli2'">Ver</button>
+                            </th:block>
                         </div>
+
                         <div class="pelis">
-                            <img class="peli-3" src="../Images/gato_con_botas.jpg" alt="Gato con botas"/>
-                            <span class="lista-pelis-item">Estreno!</span> 
-                            <p class="descripcion-peli">Mucho antes de conocer a Shrek, tiene que huir de la 
-                                ciudad cuando comienzan a sospechar que ha robado un banco.</p>
-                            <button class="boton-peli">Ver</button>
+                            <th:block th:each="user : ${pelicula3}">
+                                <img class="peli-3" src="../Images/gato_con_botas.jpg" alt="Pelicula3"/>
+                                <span class="lista-pelis-item"><td th:text="${user.getNombre}"></span> 
+                                <p class="descripcion-peli"><td th:text="${user.getDescripcion}"></p>
+                                    <button class="boton-peli" role="link" onclick="window.location = 'InfoPeli3'">Ver</button>
+                            </th:block>
                         </div>
+
                         <div class="pelis">
-                            <img class="peli-4" src="../Images/scale.jpg" alt="Una esposa de mentiras"/>
-                            <span class="lista-pelis-item">Estreno!</span> 
-                            <p class="descripcion-peli">El cirujano Danny decide contratar a su ayudante Katherine, 
-                                una madre soltera con hijos, para que finjan ser su familia.</p>
-                            <button class="boton-peli">Ver</button>
+                            <th:block th:each="user : ${pelicula4}">
+                                <img class="peli-4" src="../Images/scale.jpg" alt="Pelicula4"/>
+                                <span class="lista-pelis-item"><td th:text="${user.getNombre}"></span> 
+                                <p class="descripcion-peli"><td th:text="${user.getDescripcion}"></p>
+                                    <button class="boton-peli" role="link" onclick="window.location = 'InfoPeli4'">Ver</button>
+                            </th:block>
                         </div>
+
                         <div class="pelis">
-                            <img class="peli-5" src="../Images/IMG_5049.jpg" alt="Scream"/>
-                            <span class="lista-pelis-item">Estreno!</span> 
-                            <p class="descripcion-peli">Cuatro supervivientes de los asesinatos de Ghostface dejan 
-                                atras Woodsboro para empezar de nuevo en Nueva York.</p>
-                            <button class="boton-peli">Ver</button>
+                            <th:block th:each="user : ${pelicula5}">
+                                <img class="peli-5" src="../Images/IMG_5049.jpg" alt="Pelicula5"/>
+                                <span class="lista-pelis-item"><td th:text="${user.getNombre}"></span> 
+                                <p class="descripcion-peli"><td th:text="${user.getDescripcion}"></p>
+                                    <button class="boton-peli" role="link" onclick="window.location = 'InfoPeli5'">Ver</button>
+                            </th:block>
                         </div>
                     </div>
                 </div>
@@ -194,7 +214,7 @@
         </div>
 
     </div>
-    
+
     <footer>
         <ul class="footer-menu-container">
             <a class="idiom-item" th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}"
@@ -207,15 +227,15 @@
 
     <script src="NavBar.js"></script>
     <script type="text/javascript">
-        var nav = document.querySelector('nav');
+                                        var nav = document.querySelector('nav');
 
-        window.addEventListener('scroll', function () {
-            if (window.pageYOffset > 100) {
-                nav.classList.add('bg-dark', 'shadow');
-            } else {
-                nav.classList.remove('bg-dark', 'shadow');
-            }
-        });
+                                        window.addEventListener('scroll', function () {
+                                            if (window.pageYOffset > 100) {
+                                                nav.classList.add('bg-dark', 'shadow');
+                                            } else {
+                                                nav.classList.remove('bg-dark', 'shadow');
+                                            }
+                                        });
     </script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
     <script src="./Script.js"></script>

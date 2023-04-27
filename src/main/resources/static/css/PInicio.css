@@ -334,6 +334,12 @@ contenido {
     margin-left: 50px;
 }
 
+.titulotaquilleras{
+    position: relative;
+    top: 90px;
+    left: 60px;
+
+}
 .pelis-contenido{
     height: 50vh;
     padding: 50px;

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"     
+      xmlns:sec="http://thymeleaft.org/extras/spring-security"
+      lang="es">
+    <head>
+        <title>Detalles de la pelicula</title>        
+        <link rel="shortcut icon" href="../Images/logo-cine.png">
+        <link rel="stylesheet" type="text/css" href="Infopeli.css">
+        <link rel="stylesheet" href="css/InfoPeli.css"> 
+    </head>
+    <body style="background-color:black;">
+
+        <!-- Navbar  -->
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3">
+            <div class="container">
+                <a class="navbar-brand" href="#">Cine</a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                    >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <div class="mx-auto"></div>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="PInicio">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="Snacks.html">Snacks</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="contenido">
+            <div class="content-container">
+                <div class="pelis-contenido"
+                     style="background: linear-gradient(to bottom, rgba(0,0,0,0, #151515) url('../Images/cine.jpg')"
+                     > 
+                    <img class="titulo-peli" src="../Images/John.jpg" alt="Pelicula2"/>
+                    <h1>Sinopsis:</h1>
+                    <p class="sinopsis">Una exploración de las aventuras, las desgarradoras experiencias y 
+                        las hazañas del legendario asesino a sueldo, John Wick.</p>
+                    <button class="comprar" role="link" onclick="window.location = 'facturaC'">Comprar entrada</button>
+                </div>
+
+                <div class="lista-pelis-contenedor">
+                    <h5>En cartelera</h5>
+
+                    <div class="lista-pelis-slider">
+                        <div class="lista-pelis">
+                            <div class="pelis">
+                                <th:block th:each="user : ${pelicula1}"> <!-- Acá carga la informacion de la pelicula de forma dinamica desde sql -->
+                                    <img class="peli-1" src="../Images/Bat.jpg" alt="Pelicula1"/>
+
+                                    <span class="lista-pelis-item"><td th:text="${user.getNombre}"></span> 
+                                    <p class="descripcion-peli"><td th:text="${user.getDescripcion}"></p>
+                                        <button class="boton-peli" role="link" onclick="window.location = 'InfoPeli'">Ver</button>
+                                </th:block>
+                            </div>
+
+                            <div class="pelis">
+                                <th:block th:each="user : ${pelicula2}">
+                                    <img class="peli-2" src="../Images/John.jpg" alt="Pelicula2"/>
+                                    <span class="lista-pelis-item"><td th:text="${user.getNombre}"></span> 
+                                    <p class="descripcion-peli"><td th:text="${user.getDescripcion}"></p>
+                                        <button class="boton-peli" role="link" onclick="window.location = 'InfoPeli2'">Ver</button>
+                                </th:block>
+                            </div>
+
+                            <div class="pelis">
+                                <th:block th:each="user : ${pelicula3}">
+                                    <img class="peli-3" src="../Images/gato_con_botas.jpg" alt="Pelicula3"/>
+                                    <span class="lista-pelis-item"><td th:text="${user.getNombre}"></span> 
+                                    <p class="descripcion-peli"><td th:text="${user.getDescripcion}"></p>
+                                        <button class="boton-peli" role="link" onclick="window.location = 'InfoPeli3'">Ver</button>
+                                </th:block>
+                            </div>
+
+                            <div class="pelis">
+                                <th:block th:each="user : ${pelicula4}">
+                                    <img class="peli-4" src="../Images/scale.jpg" alt="Pelicula4"/>
+                                    <span class="lista-pelis-item"><td th:text="${user.getNombre}"></span> 
+                                    <p class="descripcion-peli"><td th:text="${user.getDescripcion}"></p>
+                                        <button class="boton-peli" role="link" onclick="window.location = 'InfoPeli4'">Ver</button>
+                                </th:block>
+                            </div>
+
+                            <div class="pelis">
+                                <th:block th:each="user : ${pelicula5}">
+                                    <img class="peli-5" src="../Images/IMG_5049.jpg" alt="Pelicula5"/>
+                                    <span class="lista-pelis-item"><td th:text="${user.getNombre}"></span> 
+                                    <p class="descripcion-peli"><td th:text="${user.getDescripcion}"></p>
+                                        <button class="boton-peli" role="link" onclick="window.location = 'InfoPeli5'">Ver</button>
+                                </th:block>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <footer>
+            <ul class="footer-menu-container">
+                <a class="idiom-item" th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}"
+                   th:href="${urlBuilder.replaceQueryParam('lang','es').toUriString()}">ES</a>
+                <a class="idiom-item" th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}"
+                   th:href="${urlBuilder.replaceQueryParam('lang','en').toUriString()}">EN</a>
+            </ul>
+            <span class="copyright">&copy;2023. Todos los derechos reservados.</span>
+        </footer>
+
+        <script src="NavBar.js"></script>
+        <script type="text/javascript">
+                                            var nav = document.querySelector('nav');
+
+                                            window.addEventListener('scroll', function () {
+                                                if (window.pageYOffset > 100) {
+                                                    nav.classList.add('bg-dark', 'shadow');
+                                                } else {
+                                                    nav.classList.remove('bg-dark', 'shadow');
+                                                }
+                                            });
+        </script>
+
+    </body>
+</html>
