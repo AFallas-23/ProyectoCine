@@ -15,50 +15,106 @@
 <body>
     <!-- Nav sencillo solo para poder regresar -->
     <header >
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Cine</a>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" th:href="@{~/PInicio}"><i class="fa fa-home"></i>Inicio</a>
-                    </li>
+        <header>
+            <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3">
+                <div class="container">
+                    <a class="navbar-brand" href="#"></a>
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav"
+                        aria-controls="navbarNav"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                        >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
 
-                </ul>
-            </div>
-        </nav>
-    </header>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <div class="mx-auto"></div>
+                        <ul class="navbar-nav">       
 
-    <!-- Agregar esto al message properties -->
-    <h1 th:text="#{CompraRealizada}"></h1>
+                            <li sec:authorize="hasRole('ROLE_USER')" class="nav-item">
+                                <a class="nav-link text-white" href="#" th:href="@{~/facturaC}" th:text="#{Comprar}"></a>
+                            </li>
+                            <li sec:authorize="hasAnyRole('ROLE_ADMIN','ROLE_MANAGER')" class="nav-item"> 
+                                <a class="nav-link text-white" href="#" th:href="@{~/factura}" th:text="#{Facturas}"></a>
+                            </li>
+                            <li sec:authorize="hasAnyRole('ROLE_ADMIN','ROLE_MANAGER')" class="nav-item"> 
+                                <a class="nav-link text-white" href="#" th:href="@{~/cliente}" th:text="#{Clientes}"></a>
+                            </li>
+                            <!-- Para dar opcion de compra a administrador -->
+                            <li sec:authorize="hasAnyRole('ROLE_ADMIN','ROLE_MANAGER')" class="nav-item"> 
+                                <a class="nav-link text-white" href="#" th:href="@{~/facturaC}" th:text="#{Comprar}"></a>
+                            </li>
 
-    <table class="table table-dark table-striped">
-        <thead class="thead-dark">
-            <tr>                  
-                <th scope="col" th:text="#{ColFactura}"></th>
-                <th scope="col" th:text="#{ColTotal}"></th>
-                <th scope="col" th:text="#{ColFecha}"></th>
-                <th scope="col" th:text="#{ColCliente}"></th>
-                <th scope="col" th:text="#{ColPelicula}"></th>
-                <th scope="col" th:text="#{ColSala}"></th>
-                <th scope="col" th:text="#{ColAsiento}"></th>
-                <th scope="col" th:text="#{Snacks}"></th>
-            </tr>
-        </thead>
-        <tbody>
-        <th:block th:each="user : ${facturas}"> 
-            <tr>
-                <td th:text="${user.getNum_factura}"></td>
-                <td th:text="${user.getTotal}"></td>
-                <td th:text="${user.getFecha}"></td>
-                <td th:text="${user.getCliente.getNombre}"></td>
-                <td th:text="${user.getPelicula.getNombre}"></td>
-                <td th:text="${user.getAsiento.getSala.getNum_sala}"></td>
-                <td th:text="${user.getAsiento.getNum_asiento}"></td>
-                <td th:text="${user.getComida.getNombre}"></td>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" th:href="@{~/PInicio}" th:text="#{Inicio}"></a>
+                            </li>
 
-            </tr>
-        </th:block>
-    </tbody>
-</table>
+                            <li class="nav-item">
+                                <a class="nav-link text-white" th:href="@{~/Snacks}" th:text="#{Snacks}"></a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link text-white" th:href="@{~/Acerca}" th:text="#{Acerca}"></a>
+                            </li>
+
+                            <li sec:authorize="isAuthenticated()" class="btn btn-outline-danger my-2 my-sm-0 btn-sm"> 
+                                <a class="nav-link text-white" href="#" th:href="@{~/logout}" th:text="#{Logout}"></a>
+                            </li>
+
+                            <li sec:authorize="isAnonymous()" class="btn btn-outline-info my-2 my-sm-0 btn-sm"> 
+                                <a class="nav-link text-white" href="#" th:href="@{~/login}" th:text="#{Login}"></a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Agregar esto al message properties -->
+        <h1 th:text="#{CompraRealizada}"></h1>
+
+        <table class="table table-dark table-striped">
+            <thead class="thead-dark">
+                <tr>                  
+                    <th scope="col" th:text="#{ColFactura}"></th>
+                    <th scope="col" th:text="#{ColTotal}"></th>
+                    <th scope="col" th:text="#{ColFecha}"></th>
+                    <th scope="col" th:text="#{ColCliente}"></th>
+                    <th scope="col" th:text="#{ColPelicula}"></th>
+                    <th scope="col" th:text="#{ColSala}"></th>
+                    <th scope="col" th:text="#{ColAsiento}"></th>
+                    <th scope="col" th:text="#{Snacks}"></th>
+                </tr>
+            </thead>
+            <tbody>
+            <th:block th:each="user : ${facturas}"> 
+                <tr>
+                    <td th:text="${user.getNum_factura}"></td>
+                    <td th:text="${user.getTotal}"></td>
+                    <td th:text="${user.getFecha}"></td>
+                    <td th:text="${user.getCliente.getNombre}"></td>
+                    <td th:text="${user.getPelicula.getNombre}"></td>
+                    <td th:text="${user.getAsiento.getSala.getNum_sala}"></td>
+                    <td th:text="${user.getAsiento.getNum_asiento}"></td>
+                    <td th:text="${user.getComida.getNombre}"></td>
+
+                </tr>
+            </th:block>
+            </tbody>
+        </table>
 </body>
+<footer>
+    <ul class="footer-menu-container">
+        <a class="idiom-item" th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}"
+           th:href="${urlBuilder.replaceQueryParam('lang','es').toUriString()}">ES</a>
+        <a class="idiom-item" th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}"
+           th:href="${urlBuilder.replaceQueryParam('lang','en').toUriString()}">EN</a>
+    </ul>
+    <span class="copyright" th:text="#{Copyright}"></span>
+</footer>
 </html>
