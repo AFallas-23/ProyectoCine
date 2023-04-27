@@ -4,6 +4,7 @@
     <head th:fragment="head">
         <title th:text="#{TiRegistro}"></title>
         <link rel="shortcut icon" href="../Images/logo-cine.png">
+        <link rel="stylesheet" href="css/Login.css">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" >
@@ -11,9 +12,69 @@
     </head>
 
     <body>
-        <h1 th:text="#{NRegistrar}"></h1>
+        <header>
+            <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3">
+                <div class="container">
+                    <a class="navbar-brand" href="#"></a>
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav"
+                        aria-controls="navbarNav"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                        >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <div class="mx-auto"></div>
+                        <ul class="navbar-nav">       
+
+                            <li sec:authorize="hasRole('ROLE_USER')" class="nav-item">
+                                <a class="nav-link text-white" href="#" th:href="@{~/facturaC}" th:text="#{Comprar}"></a>
+                            </li>
+                            <li sec:authorize="hasAnyRole('ROLE_ADMIN','ROLE_MANAGER')" class="nav-item"> 
+                                <a class="nav-link text-white" href="#" th:href="@{~/factura}" th:text="#{Facturas}"></a>
+                            </li>
+                            <li sec:authorize="hasAnyRole('ROLE_ADMIN','ROLE_MANAGER')" class="nav-item"> 
+                                <a class="nav-link text-white" href="#" th:href="@{~/cliente}" th:text="#{Clientes}"></a>
+                            </li>
+                            <!-- Para dar opcion de compra a administrador -->
+                            <li sec:authorize="hasAnyRole('ROLE_ADMIN','ROLE_MANAGER')" class="nav-item"> 
+                                <a class="nav-link text-white" href="#" th:href="@{~/facturaC}" th:text="#{Comprar}"></a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a class="nav-link text-white" th:href="@{~/PInicio}" th:text="#{Inicio}"></a>
+                            </li>
+                            
+                            <li class="nav-item">
+                                <a class="nav-link text-white" th:href="@{~/Snacks}" th:text="#{Snacks}"></a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link text-white" th:href="@{~/Acerca}" th:text="#{Acerca}"></a>
+                            </li>
+
+                            <li sec:authorize="isAuthenticated()" class="btn btn-outline-danger my-2 my-sm-0 btn-sm"> 
+                                <a class="nav-link text-white" href="#" th:href="@{~/logout}" th:text="#{Logout}"></a>
+                            </li>
+
+                            <li sec:authorize="isAnonymous()" class="btn btn-outline-info my-2 my-sm-0 btn-sm"> 
+                                <a class="nav-link text-white" href="#" th:href="@{~/login}" th:text="#{Login}"></a>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </nav>
+        </header>
+
 
         <div class="container">
+            <h1 th:text="#{NRegistrar}"></h1>
             <div class="card-header bg-black text-white"> </div>
             <div class="card-body"> 
                 <div class="container"> 
@@ -56,9 +117,9 @@
                                 <input type="text" class="form-control form-control-sm col-md-6" th:field="*{password}" placeholder="Contraseña" id="email" aria-describedby="emailHelp"> 
                             </div>
                         </div>
-                        
-                        
-                        
+
+
+
                         <button type="submit" class="btn btn-primary" value="Guardar" th:text="#{Registrarse}"></button>
                     </form>  
                 </div>
