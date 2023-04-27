@@ -39,6 +39,15 @@ public class ClienteController {
         return "redirect:/login";
     }
     
+    @PostMapping("/saveE")  //Esta funcion es para guardar el cliente que edita el admin
+    public String guardarClienteEditado(@ModelAttribute Cliente cliente){  
+        //Se definen rangos y estado automaticamente
+        //Encriptar contraseña
+        cliente.setPassword(clienteService.encryptPassword(cliente.getPassword()));
+        clienteService.saveCliente(cliente);
+        return "redirect:/cliente";
+    }
+    
     @GetMapping("/cliente")
     public String indexC(Model model){
         List<Cliente> listaClientes = clienteService.getAllCliente();
@@ -46,22 +55,20 @@ public class ClienteController {
         return "clientes";
     }
     
-//    
-//    @GetMapping("/editPersona/{id}")
-//    public String editarPersona(@PathVariable("id") Long idPersona, Model model){
-//        Persona persona = personaService.getPersonaById(idPersona);
-//        List<Pais> listaPaises = paisService.listCountry();
-//        model.addAttribute("persona", persona);
-//        model.addAttribute("paises", listaPaises);
-//        return "crear";
-//    }
-//    
-//    @GetMapping("/delete/{id}")
-//    public String eliminarPersona(@PathVariable("id") Long idPersona){
-//        personaService.delete(idPersona);
-//        return "redirect:/persona";
-//    }
-//    
+    
+    @GetMapping("/editCliente/{id}")
+    public String editarCliente(@PathVariable("id") Long idCliente, Model model){
+        Cliente cliente = clienteService.getClienteById(idCliente);
+        model.addAttribute("cliente", cliente);
+        return "registroE"; //Es similar al registro pero tiene más funciones para el administrador
+    }
+    
+    @GetMapping("/deleteCliente/{id}")
+    public String eliminarCliente(@PathVariable("id") Long idCliente){
+        clienteService.delete(idCliente);
+        return "redirect:/cliente";
+    }
+    
     
     
 

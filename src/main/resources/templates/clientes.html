@@ -40,6 +40,7 @@
                     <th scope="col" th:text="#{ColPermisos}"></th>
                     <th scope="col" th:text="#{ColRoles}"></th>
                     <th scope="col" th:text="#{ColEstado}"></th>
+                    <th scope="col" th:text="#{ColEditar}"></th>
                     <th scope="col" th:text="#{ColEliminar}"></th>
                 </tr>
             </thead>
@@ -53,9 +54,13 @@
                     <td th:text="${user.getPermissions}"></td>
                     <td th:text="${user.getRoles}"></td>
                     <td th:text="${user.getActive}"></td>
+                    
+                    <td>                        
+                        <a th:href="@{/editCliente/{id}(id=${user.getId})}" th:text="#{ColEditar}"></a>                    
+                    </td>
 
                     <td>                        
-                        <a th:href="@{/delete/{id}(id=${user.getId})}" th:text="#{ColEliminar}"></a>                    
+                        <a th:href="@{/deleteCliente/{id}(id=${user.getId})}" th:text="#{ColEliminar}"></a>                    
                     </td>
                 </tr>
             </th:block>

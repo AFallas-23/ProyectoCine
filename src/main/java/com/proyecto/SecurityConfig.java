@@ -56,7 +56,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http)  throws Exception{
         http.csrf().disable(). //Esto se desabilita para que el logout pueda funcionar, sino el mismo Spring encripta cosas y por eso da error
                 authorizeRequests()
-                .antMatchers("/factura","/cliente", "/login")
+                .antMatchers("/factura","/cliente", "/registroE", "/login")
                 .hasRole("ADMIN")
                 .antMatchers("/facturaC", "/factura", "/", "/login")
                 .hasAnyRole("USER", "ADMIN") //Borrando acá tambien se pueden restringir accesos
