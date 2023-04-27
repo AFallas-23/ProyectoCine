@@ -25,7 +25,7 @@
         <!-- Navbar  -->
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3">
             <div class="container">
-                <a class="navbar-brand" href="#" th:text="#{Cine}"></a>
+                <a class="navbar-brand" href="#" th:href="@{~/PInicio}" th:text="#{Cine}"></a>
                 <button
                     class="navbar-toggler"
                     type="button"
@@ -57,7 +57,11 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="Snacks.html" th:text="#{Snacks}"></a>
+                            <a class="nav-link text-white" th:href="@{~/Snacks}" th:text="#{Snacks}"></a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-white" th:href="@{~/Acerca}" th:text="#{Acerca}"></a>
                         </li>
 
                         <li sec:authorize="isAuthenticated()" class="btn btn-outline-danger my-2 my-sm-0 btn-sm"> 
@@ -78,10 +82,9 @@
 
         <!-- Estos son datos quemados porque es solo a modo informativo -->
         <div class="titulotaquilleras">
-            <h5>Peliculas taquilleras</h5>
+            <h5 th:text="#{Taquilleras}"></h5>
         </div>
         <div class="options">
-
 
             <div class="option" style="--optionBackground: url('../Images/Bat.jpg');">
 
@@ -156,7 +159,7 @@
         <div class="content-container">
 
             <div class="lista-pelis-contenedor">
-                <h5>En cartelera</h5>
+                <h5 th:text="#{Cartelera}"></h5>
 
                 <div class="lista-pelis-slider">
                     <div class="lista-pelis">
@@ -166,7 +169,7 @@
 
                                 <span class="lista-pelis-item"><td th:text="${user.getNombre}"></span> 
                                 <p class="descripcion-peli"><td th:text="${user.getDescripcion}"></p>
-                                    <button class="boton-peli" role="link" onclick="window.location = 'InfoPeli'">Ver</button>
+                                    <button class="boton-peli" role="link" onclick="window.location = 'InfoPeli'" th:text="#{Ver}"></button>
                             </th:block>
                         </div>
 
@@ -175,7 +178,7 @@
                                 <img class="peli-2" src="../Images/John.jpg" alt="Pelicula2"/>
                                 <span class="lista-pelis-item"><td th:text="${user.getNombre}"></span> 
                                 <p class="descripcion-peli"><td th:text="${user.getDescripcion}"></p>
-                                    <button class="boton-peli" role="link" onclick="window.location = 'InfoPeli2'">Ver</button>
+                                    <button class="boton-peli" role="link" onclick="window.location = 'InfoPeli2'" th:text="#{Ver}"></button>
                             </th:block>
                         </div>
 
@@ -184,7 +187,7 @@
                                 <img class="peli-3" src="../Images/gato_con_botas.jpg" alt="Pelicula3"/>
                                 <span class="lista-pelis-item"><td th:text="${user.getNombre}"></span> 
                                 <p class="descripcion-peli"><td th:text="${user.getDescripcion}"></p>
-                                    <button class="boton-peli" role="link" onclick="window.location = 'InfoPeli3'">Ver</button>
+                                    <button class="boton-peli" role="link" onclick="window.location = 'InfoPeli3'" th:text="#{Ver}"></button>
                             </th:block>
                         </div>
 
@@ -193,7 +196,7 @@
                                 <img class="peli-4" src="../Images/scale.jpg" alt="Pelicula4"/>
                                 <span class="lista-pelis-item"><td th:text="${user.getNombre}"></span> 
                                 <p class="descripcion-peli"><td th:text="${user.getDescripcion}"></p>
-                                    <button class="boton-peli" role="link" onclick="window.location = 'InfoPeli4'">Ver</button>
+                                    <button class="boton-peli" role="link" onclick="window.location = 'InfoPeli4'" th:text="#{Ver}"></button>
                             </th:block>
                         </div>
 
@@ -202,7 +205,7 @@
                                 <img class="peli-5" src="../Images/IMG_5049.jpg" alt="Pelicula5"/>
                                 <span class="lista-pelis-item"><td th:text="${user.getNombre}"></span> 
                                 <p class="descripcion-peli"><td th:text="${user.getDescripcion}"></p>
-                                    <button class="boton-peli" role="link" onclick="window.location = 'InfoPeli5'">Ver</button>
+                                    <button class="boton-peli" role="link" onclick="window.location = 'InfoPeli5'" th:text="#{Ver}"></button>
                             </th:block>
                         </div>
                     </div>
