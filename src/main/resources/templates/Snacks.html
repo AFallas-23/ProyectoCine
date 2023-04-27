@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Venta de snacks</title>
+        <title th:text="#{TiSnacks}"></title>
         <link rel="shortcut icon" href="../Images/logo-cine.png">
         <link href="css/Snacks.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <header>
-            <h1>Venta de snacks</h1>
+            <h1 th:text="#{TiSnacks}"></h1>
             <section id="snacks">
                 <style>
                     h1 {
@@ -29,9 +29,15 @@
         </header>
         <nav>
             <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Productos</a></li>
-                <li><a href="#">Contacto</a></li>
+                <li><a th:href="@{~/PInicio}" th:text="#{Inicio}"></a></li>
+                <li><a th:href="@{~/Snacks}" th:text="#{Snacks}"></a></li>
+                <li><a th:href="@{~/Acerca}" th:text="#{Acerca}"></a></li>
+                <li sec:authorize="isAuthenticated()" class="btn btn-outline-danger my-2 my-sm-0 btn-sm"> 
+                    <a th:href="@{~/logout}" th:text="#{Logout}"></a>
+                </li>
+                <li sec:authorize="isAnonymous()" class="btn btn-outline-info my-2 my-sm-0 btn-sm"> 
+                    <a th:href="@{~/login}" th:text="#{Login}"></a>
+                </li>
             </ul>
         </nav>
         <section>
@@ -40,32 +46,32 @@
                 <h2>Snack 1</h2>
                 <div class="product-info">
                     <img src="images/snack1-2.jpg" alt="Chocolates y frituras">
-                    <p>Descripcion del producto 1</p>
-                     <p>1000-2000</p>
-                    <button>Comprar</button>
+                    <p th:text="#{Combo1}"></p>
+                    <p>1000-2000</p>
+                <button sec:authorize="hasAnyRole('ROLE_USER','ROLE_ADMIN','ROLE_MANAGER')" role="link" onclick="window.location = 'facturaC'" th:text="#{Comprar}"></button>
                 </div>
             </article>
 
             <article>
                 <h2>Snack 2</h2>
                 <img src="images/snack2-2.jpg" alt="Combos">
-                <p>Combos de palomitas y demas</p>
+                <p  th:text="#{Combo2}"></p>
                 <p>5000-7000</p>
-                <button>Comprar</button>
+                <button sec:authorize="hasAnyRole('ROLE_USER','ROLE_ADMIN','ROLE_MANAGER')" role="link" onclick="window.location = 'facturaC'" th:text="#{Comprar}"></button>
             </article>
             <article>
                 <h2>Snack 3</h2>
                 <img src="images/snack3-2.jpg" alt="Nachos">
-                <p>Tortillas tostadas en salsa de queso</p>
+                <p  th:text="#{Combo3}"></p>
                 <p>2000</p>
-                <button>Comprar</button>
+                <button sec:authorize="hasAnyRole('ROLE_USER','ROLE_ADMIN','ROLE_MANAGER')" role="link" onclick="window.location = 'facturaC'" th:text="#{Comprar}"></button>
             </article>
             <article>
                 <h2>Snack 4</h2>
                 <img src="images/snack4-2.jpg" alt="Palomitas">
-                <p>Todo tipo de palomitas unitarias</p>
+                <p  th:text="#{Combo4}"></p>
                 <p>3500</p>
-                <button>Comprar</button>
+                <button sec:authorize="hasAnyRole('ROLE_USER','ROLE_ADMIN','ROLE_MANAGER')" role="link" onclick="window.location = 'facturaC'" th:text="#{Comprar}"></button>
             </article>
         </section>
 
@@ -76,7 +82,7 @@
                 <a class="idiom-item" th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}"
                    th:href="${urlBuilder.replaceQueryParam('lang','en').toUriString()}">EN</a>
             </ul>
-            <span class="copyright">&copy;2023. Todos los derechos reservados.</span>
+            <span class="copyright" th:text="#{Copyright}"></span>
         </footer>
 
     </body>

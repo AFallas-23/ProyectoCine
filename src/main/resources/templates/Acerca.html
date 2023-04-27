@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html lang="es">
+    <head>
+        <title th:text="#{TiQuienes}"></title>
+        <link rel="shortcut icon" href="../Images/logo-cine.png">
+        <link rel="stylesheet" type="text/css" href="Acerca.css">
+        <link rel="stylesheet" href="css/Acerca.css"> 
+    </head>
+    <body style="background-color:black;">
+
+        <!-- Navbar  -->
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3">
+            <div class="container">
+                <a class="navbar-brand" href="#" th:href="@{~/PInicio}" th:text="#{Cine}"></a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                    >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <div class="mx-auto"></div>
+                    <ul class="navbar-nav">       
+
+                        <li sec:authorize="hasRole('ROLE_USER')" class="nav-item">
+                            <a class="nav-link text-white" href="#" th:href="@{~/facturaC}" th:text="#{Comprar}"></a>
+                        </li>
+                        <li sec:authorize="hasAnyRole('ROLE_ADMIN','ROLE_MANAGER')" class="nav-item"> 
+                            <a class="nav-link text-white" href="#" th:href="@{~/factura}" th:text="#{Facturas}"></a>
+                        </li>
+                        <li sec:authorize="hasAnyRole('ROLE_ADMIN','ROLE_MANAGER')" class="nav-item"> 
+                            <a class="nav-link text-white" href="#" th:href="@{~/cliente}" th:text="#{Clientes}"></a>
+                        </li>
+                        <!-- Para dar opcion de compra a administrador -->
+                        <li sec:authorize="hasAnyRole('ROLE_ADMIN','ROLE_MANAGER')" class="nav-item"> 
+                            <a class="nav-link text-white" href="#" th:href="@{~/facturaC}" th:text="#{Comprar}"></a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-white" th:href="@{~/Snacks}" th:text="#{Snacks}"></a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-white" th:href="@{~/Acerca}" th:text="#{Acerca}"></a>
+                        </li>
+
+                        <li sec:authorize="isAuthenticated()" class="btn btn-outline-danger my-2 my-sm-0 btn-sm"> 
+                            <a class="nav-link text-white" href="#" th:href="@{~/logout}" th:text="#{Logout}"></a>
+                        </li>
+
+                        <li sec:authorize="isAnonymous()" class="btn btn-outline-info my-2 my-sm-0 btn-sm"> 
+                            <a class="nav-link text-white" href="#" th:href="@{~/login}" th:text="#{Login}"></a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+
+        <div class="contenido">
+            <div class="content-container">
+                <div class="contenido"
+                     style="background: linear-gradient(to bottom, rgba(0,0,0,0, #151515) url('../Images/Cine.jpg')"
+                     > 
+                    <h1 th:text="#{Quienes}"></h1>
+                    <p class="sinopsis" th:text="#{Somos}">Somos un grupo de estudiantes de la universidad Fidelitas que realizaron esta pagina para un
+                        proyecto cuatrimestral, todo lo que se encuentre aca ha sido realizado por nosotros tomando de referencia
+                        lo que el profesor nos ha brindado a lo largo de las semanas.</p>
+                </div>
+            </div>
+
+
+        </div>
+
+        <footer>
+            <ul class="footer-menu-container">
+                <a class="idiom-item" th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}"
+                   th:href="${urlBuilder.replaceQueryParam('lang','es').toUriString()}">ES</a>
+                <a class="idiom-item" th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}"
+                   th:href="${urlBuilder.replaceQueryParam('lang','en').toUriString()}">EN</a>
+            </ul>
+            <span class="copyright" th:text="#{Copyright}"></span>
+        </footer>
+
+
+        <script src="NavBar.js"></script>
+        <script type="text/javascript">
+            var nav = document.querySelector('nav');
+
+            window.addEventListener('scroll', function () {
+                if (window.pageYOffset > 100) {
+                    nav.classList.add('bg-dark', 'shadow');
+                } else {
+                    nav.classList.remove('bg-dark', 'shadow');
+                }
+            });
+        </script>
+
+    </body>
+</html>
