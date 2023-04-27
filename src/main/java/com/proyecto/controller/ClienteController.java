@@ -15,8 +15,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class ClienteController {
     //Para poder realizar registros de clientes
-    //Hay que buscar como poder encriptar la contraseña para guardarla encripta en la base da datos
-    //BCrypt
     
     @Autowired
     private IClienteService clienteService;
@@ -38,6 +36,7 @@ public class ClienteController {
         clienteService.saveCliente(cliente);
         return "redirect:/login";
     }
+    
     
     @PostMapping("/saveE")  //Esta funcion es para guardar el cliente que edita el admin
     public String guardarClienteEditado(@ModelAttribute Cliente cliente){  
